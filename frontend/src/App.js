@@ -38,7 +38,11 @@ function App() {
           </div>
         )}
 
+<<<<<<< HEAD
 
+=======
+        {/* <h1>test</h1> */}
+>>>>>>> b1e1d945ef0697ff3bff6ffecda52aecb3777070
 
 
         <Switch>
