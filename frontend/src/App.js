@@ -3,11 +3,9 @@ import './App.css';
 import { useEffect, useState, useContext } from 'react'
 import TheContext from './TheContext'
 import { Switch, Link, Route } from 'react-router-dom'
-import Home from './Home'
-import Profile from './Profile'
-import Blog from './Blog'
-import Auth from './Auth'
 import actions from './api'
+import Home from './home/Home'
+import Login from './home/Login'
 
 function App() {
 
@@ -32,7 +30,7 @@ function App() {
   return (
     <TheContext.Provider value={context}>
       <div className="App">
-        <h1>Hacker Blog </h1>
+
         {user?.name && (
           <div>
             <p>Welcome {user?.name}</p>
@@ -40,18 +38,13 @@ function App() {
           </div>
         )}
 
+        <h1>test</h1>
 
-        < nav >
-          <Link to='/'>Home</Link>
-          <Link to='/blog'>Blog</Link>
-          <Link to='/profile'>Profile</Link>
-
-        </nav>
 
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/blog" component={Blog} />
-          <Route exact path="/profile" component={Profile} />
+          <Route path='/' component={Home} />
+          <Route exact path='/login' component={Login} />
+
 
         </Switch>
 

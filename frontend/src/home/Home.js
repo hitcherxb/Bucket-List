@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Login from './Login'
+
 
 function Home(props) {
     return (
@@ -10,7 +10,7 @@ function Home(props) {
             <h1 className="quote">Design a life you are inspired to live</h1>
 
             <div className="loginButton">
-                <Link to='./home/Login'><h2>Log In</h2></Link>
+                <Link to='/login'><h2>Log In</h2></Link>
             </div>
         </div>
     );

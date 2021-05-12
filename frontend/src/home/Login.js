@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React from 'react';
-import '../Login.css'
+// import '../Login.css'
 
 function Login(props) {
 
