@@ -22,29 +22,20 @@ function Login(props) {
 
 
     return (
-        <div id='loginPage'>
-
+        <div className='loginPage'>
             <Link to='/login' />
-            <form id='flex' onSubmit={submitLogin}>
-                <div className='box'>
-                    <div>
-                        <h1>Login</h1>
-                    </div>
-                    <div>
-                        <input onChange={((e) => setUsername(e.target.value))} type='text' placeholder='Username' />
-                    </div>
-                    <div>
-                        <input onChange={((e) => setPassword(e.target.value))} type='text' placeholder='Password' />
-                    </div>
+            <h1 id='title'>BucketList</h1>
+            <div className='box'>
+                <h1>Login</h1>
+
+                <p>Login to your bucketlist!</p>
+                <form onSubmit={submitLogin}>
+                    <input onChange={((e) => setUsername(e.target.value))} type='text' placeholder='Username' />
+                    <input onChange={((e) => setPassword(e.target.value))} type='text' placeholder='Password' />
                     <button>Click me</button>
-                    <Link to='/signup'><h2>Sign up here!</h2></Link>
-                </div>
-
-            </form>
-
-
-
-
+                    <Link to='/signup'><p>No account? Sign up here</p></Link>
+                </form>
+            </div>
         </div>
     );
 }
