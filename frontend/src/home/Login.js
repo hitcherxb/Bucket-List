@@ -22,6 +22,7 @@ function Login(props) {
                 <div>
                     <input type='text' placeholder='Password' />
                 </div>
+                <Link to='/signup'><h2>Sign up here!</h2></Link>
 
             </form>
 
