@@ -6,6 +6,7 @@ import actions from './api'
 import Home from './home/Home'
 import Login from './home/Login'
 import Signup from './home/Signup'
+import MyList from './home/MyList';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
+          <Route exact path='/bucketlist' component={MyList} />
 
 
         </Switch>
