@@ -1,17 +1,19 @@
 import React from 'react';
 import "./signup.css";
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import actions from '../api';
+import TheContext from '../TheContext';
 
 function Signup(props) {
 
-    const {user, setUser} = useState('');
-    const {password, setPassword} = useState('');
+    const [user, setUsername] = useState('');
+    const [pass, setPassword] = useState('');
+    let {setUser} = useContext(TheContext);
 
     const submitSignup = (e) => {
         e.preventDefault()
-        actions.logIn(user, password).then(user => {
-            props.setUser(user)
+        actions.signUp({user, pass}).then(user => {
+            setUser(user)
         })
     }
 
@@ -24,8 +26,8 @@ function Signup(props) {
         
         <p>Sign up to create a bucket list and start living a life that inspires you!</p>
         <form onSubmit={submitSignup}>
-            <input type="text" placeholder= "Username"></input><br></br>
-            <input type="text" placeholder="Password"></input><br></br>
+            <input type="text" placeholder= "Username" onChange={((e) => setUsername(e.target.value))}></input><br></br>
+            <input type="text" placeholder="Password" onChange={((e) => setPassword(e.target.value))}></input><br></br>
             <button>Sign Up</button>
         </form>
         </div>

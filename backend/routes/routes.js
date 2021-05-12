@@ -55,6 +55,27 @@ router.post(`/logMeIn`, async (req, res) => {
 
 })
 
+router.post(`/signUp`, async (req, res) => {
+
+    //Find user
+    let user = await User.findOne({ user: req.body.user })
+
+    // if (user.pass != req.body.pass) {
+    //     res.json({ error: 'Password does not match' })
+    // }
+
+    //If no user >> Create User
+    if (!user) {
+        user = await User.create(req.body)
+    }
+
+    //No matter what i have a user and now I can create the jwt token 
+    jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
+        res.json({ user, token })
+    })
+
+})
+
 
 
 
