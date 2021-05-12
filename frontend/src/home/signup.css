@@ -22,12 +22,16 @@
     left: 32%;
     top: 30%;
     border-radius: 16px;
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
-
+.signupContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}
 .signupForm button {
     background-color: #5688ff;
     color: white;
