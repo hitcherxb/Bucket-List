@@ -5,6 +5,7 @@ import { Switch, Link, Route } from 'react-router-dom'
 import actions from './api'
 import Home from './home/Home'
 import Login from './home/Login'
+import Signup from './home/Signup'
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={Signup} />
 
 
         </Switch>
