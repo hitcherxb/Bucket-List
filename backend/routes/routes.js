@@ -37,7 +37,11 @@ router.get(`/`, (req, res) => {
 router.post(`/logMeIn`, async (req, res) => {
 
     //Find user
-    let user = await User.findOne({ email: req.body.email })
+    let user = await User.findOne({ user: req.body.user })
+
+    // if (user.pass != req.body.pass) {
+    //     res.json({ error: 'Password does not match' })
+    // }
 
     //If no user >> Create User
     if (!user) {

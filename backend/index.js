@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 
 mongoose
-    .connect(process.env.MONGODB_URI || `mongodb+srv://final:final@cluster0.e27ba.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(process.env.MONGODB_URI || `mongodb+srv://final:final@cluster0.e27ba.mongodb.net/finalProject?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(x => console.log(`Connected to ${x.connections[0].name}`))
     .catch(() => console.error("Error connecting to Mongo"))
 
