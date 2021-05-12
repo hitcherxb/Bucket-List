@@ -49,9 +49,9 @@ function App() {
 
 
 
-
       </div>
-    </TheContext.Provider >
+    </TheContext.Provider>
+
   );
 }
 
