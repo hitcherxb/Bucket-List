@@ -38,8 +38,6 @@ function App() {
           </div>
         )}
 
-        <h1>test</h1>
-
 
         <Switch>
           <Route exact path='/' component={Home} />
