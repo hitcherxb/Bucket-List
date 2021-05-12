@@ -11,7 +11,7 @@ function Home(props) {
 
         <div className="homePage">
 
-            <h1 className="homeHeader">Bucket List</h1>
+            <h1 className="homeHeader">BucketList</h1>
 
             <h2 className="quote">Design a life you are inspired to live</h2>
 
