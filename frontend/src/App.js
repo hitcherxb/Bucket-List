@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState, useContext } from 'react'
 import TheContext from './TheContext'
@@ -42,7 +41,7 @@ function App() {
 
 
         <Switch>
-          <Route path='/' component={Home} />
+          <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
 
 
