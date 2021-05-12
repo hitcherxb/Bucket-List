@@ -1,0 +1,25 @@
+#loginPage{
+    background-image:url('../pictures/test.png');
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+h2{
+    color: black;
+}
+
+#flex{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.box{
+    background-color: white;
+    /* width: 40vw;
+    height: 50vh;
+    position: absolute;
+    left: 32%; */
+}
