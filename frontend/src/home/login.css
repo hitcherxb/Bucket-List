@@ -19,8 +19,14 @@
     background-position: absolute;
 }
 
-h2{
-    color: black;
+.box h1{
+    font-size: 50px;
+    margin-bottom: 2vw;
+}
+
+.box p{
+    margin-bottom: 1vw;
+
 }
 
 
@@ -54,7 +60,9 @@ h2{
     width: 10vw;
     margin-top: 15px;
     border: none;
-    margin-bottom: 2vw
+    margin-bottom: 2vw;
+    font-size: 20px;
+    padding: .5vw;
 }
 
 .box input {

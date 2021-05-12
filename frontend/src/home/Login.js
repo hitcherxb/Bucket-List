@@ -26,13 +26,13 @@ function Login(props) {
             <Link to='/login' />
             <h1 id='title'>BucketList</h1>
             <div className='box'>
-                <h1>Login</h1>
+                <h1>Login Here</h1>
 
                 <p>Login to your bucketlist!</p>
                 <form onSubmit={submitLogin}>
                     <input onChange={((e) => setUsername(e.target.value))} type='text' placeholder='Username' />
                     <input onChange={((e) => setPassword(e.target.value))} type='text' placeholder='Password' />
-                    <button>Click me</button>
+                    <button>Login</button>
                     <Link to='/signup'><p>No account? Sign up here</p></Link>
                 </form>
             </div>
