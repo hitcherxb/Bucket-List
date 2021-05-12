@@ -1,6 +1,6 @@
 import React from 'react';
 import "./signup.css";
-import {useState, useContext} from 'react';
+import { useState, useContext } from 'react';
 import actions from '../api';
 import TheContext from '../TheContext';
 
@@ -8,11 +8,11 @@ function Signup(props) {
 
     const [user, setUsername] = useState('');
     const [pass, setPassword] = useState('');
-    let {setUser} = useContext(TheContext);
+    let { setUser } = useContext(TheContext);
 
     const submitSignup = (e) => {
         e.preventDefault()
-        actions.signUp({user, pass}).then(user => {
+        actions.signUp({ user, pass }).then(user => {
             setUser(user)
         })
     }
