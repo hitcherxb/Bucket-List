@@ -21,8 +21,9 @@ function Signup(props) {
     return (
         <div className="signupPage">
         <h1 id='title'>BucketList</h1>
-        <div className="signupForm">
-        <h1>Sign Up</h1>
+        <div className="signupContainer">
+        
+        <h2>Sign Up</h2>
         
         <p>Sign up to create a bucket list and start living a life that inspires you!</p>
         <form onSubmit={submitSignup}>
@@ -30,6 +31,7 @@ function Signup(props) {
             <input type="text" placeholder="Password" onChange={((e) => setPassword(e.target.value))}></input><br></br>
             <button>Sign Up</button>
         </form>
+        
         </div>
         
         </div>
