@@ -39,8 +39,6 @@ function App() {
           </div>
         )}
 
-        {/* <h1>test</h1> */}
-
 
         <Switch>
           <Route exact path='/' component={Home} />
@@ -53,9 +51,9 @@ function App() {
 
 
 
-
       </div>
-    </TheContext.Provider >
+    </TheContext.Provider>
+
   );
 }
 

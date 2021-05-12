@@ -1,0 +1,43 @@
+.signupPage {
+    background-image: url("../pictures/loginbg.png");
+    width: 100vw;
+    height: 100vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#title {
+    color: white;
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    font-size: 2rem;
+}
+
+.signupForm {
+    background-color: white;
+    height: 50vh;
+    width: 40vw;
+    left: 32%;
+    top: 30%;
+    border-radius: 16px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signupForm button {
+    background-color: #5688ff;
+    color: white;
+    border-radius: 10px;
+    width: 10vw;
+    margin-top: 15px;
+    border: none;
+}
+
+.signupForm input {
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: #9E9B9B;
+}
