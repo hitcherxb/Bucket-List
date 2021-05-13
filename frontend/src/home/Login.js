@@ -24,7 +24,7 @@ function Login(props) {
     return (
         <div className='loginPage'>
             <Link to='/login' />
-            <h1 id='title'>BucketList</h1>
+            <Link to="/"><h1 id='title'>BucketList</h1></Link>
             <div className='box'>
                 <h1>Login Here</h1>
 
