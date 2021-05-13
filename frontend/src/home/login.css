@@ -58,6 +58,7 @@
     width: 45vw;
     height: 5vh;
     padding-top: 2vw;
+    margin: 1vw;
 }
 
 form{
@@ -134,7 +135,7 @@ form{
     outline: 0;
     border-width: 0 0 1px;
     border-color: #9E9B9B;
-    width: 30vw;
+    width: 20vw;
     height: 5vh;
 }
 
