@@ -9,8 +9,9 @@ function MyList(props) {
     const [listItem, setListItem] = useState("");
     const [listItems, setListItems] = useState([]);
 
-    const handleChoice = (props) => {
-        setButton(props.target.outerText)
+    const handleChoice = (e) => {
+        e.preventDefault()
+        setButton(e.target.outerText)
     }
 
     useEffect(() => {
@@ -25,7 +26,7 @@ function MyList(props) {
         <div className="bucketListPage">
 
             <h1 className="bucketListHeader">BucketList</h1>
-            
+
             <div className="bucketlistContainer">
                 <div className="mybucketlistHeader">
                     <h3 className="bucketHeader">My Bucket List</h3>
@@ -34,7 +35,7 @@ function MyList(props) {
                 <div className="bucketlist">
                     <form>
                         <div className="inputTitle">
-                            <input type="text" onChange={handleChange} placeholder="Add bucket list item e.g. See the Statue of Liberty!" />
+                            <input type="text" placeholder="Add bucket list item here" />
 
                         </div>
                         <div className="inputType">
