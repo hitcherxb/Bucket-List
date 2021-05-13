@@ -1,3 +1,5 @@
+/* DESKTOP VIEW */
+@media(min-width: 640px) {
 .signupPage {
     background-image: url("../pictures/loginbg.png");
     width: 100vw;
@@ -31,8 +33,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
-    
+    position: absolute; 
+    align-items: center;
 }
 
 
@@ -55,4 +57,85 @@
 
 .signupContainer p {
     padding: 1rem;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+
+/* MOBILE VIEW */
+
+@media(max-width: 650px) {
+
+.signupPage {
+    background-image: url("../pictures/loginbg.png");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: absolute;
+}
+    
+#title {
+    color: white;
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    font-size: 2rem;
+    font-weight: 700;
+}
+    
+.signupContainer h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0;
+}
+    
+.signupContainer{
+    background-color: white;
+    height: 50vh;
+    width: 60vw;
+    left: 25%;
+    top: 30%;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute; 
+    align-items: center;
+}
+    
+    
+.signupContainer button {
+    background-color: #5688ff;
+    color: white;
+    border-radius: 10px;
+    width: 17vw;
+    border: none;
+    padding: .5vw;
+    font-size: .8rem;
+}
+    
+.signupContainer input {
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: #9E9B9B;
+}
+    
+.signupContainer p {
+    padding: 1rem;
+    text-align: center;
+    font-size: .8rem;
+}
+    
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 }

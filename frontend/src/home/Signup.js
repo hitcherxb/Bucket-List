@@ -3,6 +3,7 @@ import "./signup.css";
 import { useState, useContext } from 'react';
 import actions from '../api';
 import TheContext from '../TheContext';
+import {Link} from 'react-router-dom';
 
 function Signup(props) {
 
@@ -20,7 +21,7 @@ function Signup(props) {
 
     return (
         <div className="signupPage">
-        <h1 id='title'>BucketList</h1>
+        <Link to="/"><h1 id='title'>BucketList</h1></Link>
         <div className="signupContainer">
         
         <h2>Sign Up</h2>
