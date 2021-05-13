@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./myList.css";
 import Dropdown from 'react-bootstrap/Dropdown'
 
 function MyList(props) {
+    const [button, setButton] = useState('Choose Place')
 
-
-    function display() {
-        let obj = document.getElementById("selectNow");
-        document.write(obj.options[obj.selectedIndex].text);
+    const handleChoice = (props) => {
+        setButton(props.target.outerText)
     }
+
+
+
 
 
     return (
@@ -29,15 +31,15 @@ function MyList(props) {
                         <div className="inputType">
                             <Dropdown>
                                 <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                    Choose Category
-                        </Dropdown.Toggle>
+                                    {button}
+                                </Dropdown.Toggle>
 
-                                <Dropdown.Menu show>
-                                    <Dropdown.Item eventkey="1">Adventure</Dropdown.Item>
-                                    <Dropdown.Item eventkey="2">Entertainment </Dropdown.Item>
-                                    <Dropdown.Item eventkey="3">Travel</Dropdown.Item>
-                                    <Dropdown.Item eventkey="4">Dining</Dropdown.Item>
-                                    <Dropdown.Item eventkey="5">Miscellaneous</Dropdown.Item>
+                                <Dropdown.Menu >
+                                    <Dropdown.Item onClick={handleChoice}>Adventure</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleChoice}>Entertainment </Dropdown.Item>
+                                    <Dropdown.Item onClick={handleChoice}>Travel</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleChoice}>Dining</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleChoice}>Miscellaneous</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
