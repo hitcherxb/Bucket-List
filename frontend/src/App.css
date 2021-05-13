@@ -10,9 +10,14 @@
   align-items: center;
   justify-content: center;
 }
+
 .loginButton{
   display: flex;
   justify-content: center;
+}
+
+.quote{
+  width: 100vw
 }
 
 @media (prefers-reduced-motion: no-preference) {
