@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "./myList.css";
 import Dropdown from 'react-bootstrap/Dropdown'
+import axios from 'axios';
 
 function MyList(props) {
-    const [button, setButton] = useState('Choose Place')
+    const [button, setButton] = useState('Choose Place');
+    const [listItem, setListItem] = useState("");
+    const [listItems, setListItems] = useState([]);
 
     const handleChoice = (props) => {
         setButton(props.target.outerText)
@@ -14,7 +17,9 @@ function MyList(props) {
         console.log(`fetch data for user ${props.match.params.userid}`)
     }, [])
 
-
+    function handleChange(e) {
+        setListItem(e.target.value)
+    }
 
     return (
         <div className="bucketListPage">
@@ -29,7 +34,7 @@ function MyList(props) {
                 <div className="bucketlist">
                     <form>
                         <div className="inputTitle">
-                            <input type="text" placeholder="Add bucket list item e.g. See the Statue of Liberty!" />
+                            <input type="text" onChange={handleChange} placeholder="Add bucket list item e.g. See the Statue of Liberty!" />
 
                         </div>
                         <div className="inputType">
