@@ -6,8 +6,9 @@ import Dropdown from 'react-bootstrap/Dropdown'
 function MyList(props) {
     const [button, setButton] = useState('Choose Place')
 
-    const handleChoice = (props) => {
-        setButton(props.target.outerText)
+    const handleChoice = (e) => {
+        e.preventDefault()
+        setButton(e.target.outerText)
     }
 
 
