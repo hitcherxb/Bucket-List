@@ -27,11 +27,24 @@
     background: white;
     width: 60vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    
     position: absolute;
     left: 20%;
     top: 15%;
     height: 70vh;
     border-radius: 16px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bucketlist form {
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    justify-content: space-evenly;
+}
+.inputTitle input{
+    width: 30vw;
+    height: 4.2vh;
+    border-radius: 9px;
 }
