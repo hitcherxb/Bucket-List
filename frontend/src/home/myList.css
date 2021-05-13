@@ -1,3 +1,107 @@
+
+.bucketListPage{
+    background-image: url("../pictures/profilebg.png");
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bucketListHeader{
+    color: #5688ff;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-left: 1%;
+}
+
+.bucketHeader{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 2%;
+}
+
+.bucketlistContainer{
+    background: white;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    height: 85vh;
+    border-radius: 16px;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.bucketlist form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.inputTitle input{
+    width: 75vw;
+    height: 5vh;
+    border-radius: 9px;
+    text-align: center;
+    color: #848484;
+    border: 2px solid #C4C4C4;
+    margin: 1vw;
+}
+
+button{
+    font-size: 2em;
+}
+
+.inputAdd button{
+    border-radius: 0%;
+    font-size: 1em;
+    height: 7vw;
+    width: 40vw;
+    background-color: #5688FF;
+    color: white;
+    display: flex;
+    align-content: center;
+    align-items: flex-end;
+    justify-content: center;
+    border: none;
+}
+#dropdown-basic{
+    background: #FFFFFF;
+    border: 2px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 16px;
+    color: #848484;
+    width: 75vw;
+    height: 11vw;
+    margin-bottom: 1vw;
+}
+
+ .hrtag{
+    border: 3px solid #CCD4E7;
+    border-radius: 5px;
+    width: 8vw;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For Desktop */
+
+@media (min-width: 900px) {
+
 .bucketListPage{
     background-image: url("../pictures/profilebg.png");
     height: 100vh;
@@ -76,7 +180,8 @@ button{
     border-radius: 16px;
     color: #848484;
     width: 15vw;
-    height: 3.4vw;
+    height: 5vw;
+    margin: 0;
 }
 
  .hrtag{
@@ -84,3 +189,5 @@ button{
     border-radius: 5px;
     width: 8vw;
  }
+
+}
