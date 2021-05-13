@@ -45,6 +45,42 @@
 }
 .inputTitle input{
     width: 30vw;
-    height: 4.2vh;
+    height: 5vh;
     border-radius: 9px;
+    text-align: center;
+    color: #848484;
+    border: 2px solid #C4C4C4;
 }
+
+button{
+    font-size: 2em;
+}
+
+.inputAdd button{
+    border-radius: 50%;
+    font-size: 3em;
+    height: 4vw;
+    width: 4vw;
+    background-color: #5688FF;
+    color: white;
+    display: flex;
+    align-content: center;
+    align-items: flex-end;
+    justify-content: center;
+    border: none;
+}
+#dropdown-basic{
+    background: #FFFFFF;
+    border: 2px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 16px;
+    color: #848484;
+    width: 15vw;
+    height: 3.4vw;
+}
+
+ .hrtag{
+    border: 3px solid #CCD4E7;
+    border-radius: 5px;
+    width: 8vw;
+ }
