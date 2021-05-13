@@ -67,6 +67,7 @@ button{
     align-content: center;
     align-items: flex-end;
     justify-content: center;
+    border: none;
 }
 #dropdown-basic{
     background: #FFFFFF;
