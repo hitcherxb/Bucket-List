@@ -75,9 +75,9 @@
   }
   /* Log in Button */
   .loginButton{
-    background-color: whitesmoke;
-  color: blue;
-  height: 45x;
+    background-color:#5688ff;
+  color: whitesmoke;
+  height: 4.5vh;
   width: 150px;
   border-radius: 15px;
   font: bold;
