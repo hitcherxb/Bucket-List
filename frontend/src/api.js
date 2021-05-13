@@ -32,15 +32,16 @@ const actions = {
     },
 
     logIn: async ({ user, pass }) => {
-        let res = await axios.post(`${serverUrl}/logMeIn`, { user, pass })
+        let res = await axios.post(`${serverUrl}/login`, { user, pass })
         localStorage.setItem('token', res.data.token)
-        return res.data.user
+        return res.data
     },
 
     signUp: async ({ user, pass }) => {
         let res = await axios.post(`${serverUrl}/signUp`, { user, pass })
         localStorage.setItem('token', res.data.token)
-        return res.data.user
+        console.log(res)
+        return res.data
     }
 
 

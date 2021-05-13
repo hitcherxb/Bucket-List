@@ -9,12 +9,19 @@ import axios from "axios";
 function Login(props) {
     const [user, setUsername] = useState('')
     const [pass, setPassword] = useState('')
+    const [error, setError] = useState('')
     let { setUser } = useContext(TheContext)
 
     const submitLogin = (e) => {
         e.preventDefault()
-        actions.logIn({ user, pass }).then(user => {
-            setUser(user)
+        actions.logIn({ user, pass }).then(data => {
+            console.log(data)
+            if(data.user){
+            setUser(data.user)
+            props.history.push(`/bucketlist/${data.user._id}`)
+        } else {
+            setError(data.error)
+        }
         })
     }
 
@@ -33,6 +40,7 @@ function Login(props) {
                     <input onChange={((e) => setUsername(e.target.value))} type='text' placeholder='Username' />
                     <input onChange={((e) => setPassword(e.target.value))} type='text' placeholder='Password' />
                     <button>Login</button>
+                    {error}
                     <Link to='/signup'><p>No account? Sign up here</p></Link>
                 </form>
             </div>
