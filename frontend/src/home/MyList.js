@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "./myList.css";
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -10,7 +10,9 @@ function MyList(props) {
         setButton(props.target.outerText)
     }
 
-
+    useEffect(() => {
+        console.log(`fetch data for user ${props.match.params.userid}`)
+    }, [])
 
 
 
@@ -18,7 +20,7 @@ function MyList(props) {
         <div className="bucketListPage">
 
             <h1 className="bucketListHeader">BucketList</h1>
-
+            
             <div className="bucketlistContainer">
                 <div className="mybucketlistHeader">
                     <h3 className="bucketHeader">My Bucket List</h3>

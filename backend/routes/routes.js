@@ -34,19 +34,20 @@ router.get(`/`, (req, res) => {
     res.json({ serverWorks: true })
 })
 
-router.post(`/logMeIn`, async (req, res) => {
+router.post(`/login`, async (req, res) => {
 
     //Find user
     let user = await User.findOne({ user: req.body.user })
+    // let pass = await User.findOne({ pass: req.body.pass })
 
-    // if (user.pass != req.body.pass) {
-    //     res.json({ error: 'Password does not match' })
-    // }
+    if (user.pass != req.body.pass) {
+        res.json({ error: 'Password does not match' })
+    }
 
     //If no user >> Create User
-    if (!user) {
-        user = await User.create(req.body)
-    }
+    // if (!user) {
+    //     user = await User.create(req.body)
+    // }
 
     //No matter what i have a user and now I can create the jwt token 
     jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
@@ -67,6 +68,8 @@ router.post(`/signUp`, async (req, res) => {
     //If no user >> Create User
     if (!user) {
         user = await User.create(req.body)
+    } else {
+        res.json({ error: 'User exists' })
     }
 
     //No matter what i have a user and now I can create the jwt token 
