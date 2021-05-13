@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./myList.css";
-import Dropdown from 'react-bootstrap/Dropdown'
+
 
 function MyList(props) {
 
@@ -27,19 +27,8 @@ function MyList(props) {
                             <input type="text" placeholder="Add Bucket List Item" />
                         </div>
                         <div className="inputType">
-                            <Dropdown>
-                                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                    Choose Category
-                        </Dropdown.Toggle>
 
-                                <Dropdown.Menu show>
-                                    <Dropdown.Item eventkey="1">Adventure</Dropdown.Item>
-                                    <Dropdown.Item eventkey="2">Entertainment </Dropdown.Item>
-                                    <Dropdown.Item eventkey="3">Travel</Dropdown.Item>
-                                    <Dropdown.Item eventkey="4">Dining</Dropdown.Item>
-                                    <Dropdown.Item eventkey="5">Miscellaneous</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+
                         </div>
                         <div className="inputAdd">
                             <button>+</button>
