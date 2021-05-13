@@ -53,6 +53,7 @@
     outline: 0;
     border-width: 0 0 1px;
     border-color: #9E9B9B;
+    width: 20vw;
 }
 
 .signupContainer p {
@@ -92,16 +93,16 @@ form{
     
 .signupContainer h2 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin: 0;
 }
     
 .signupContainer{
     background-color: white;
     height: 50vh;
-    width: 60vw;
-    left: 25%;
-    top: 30%;
+    width: 80vw;
+    left: 10%;
+    top: 27%;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -115,10 +116,9 @@ form{
     background-color: #5688ff;
     color: white;
     border-radius: 10px;
-    width: 17vw;
+    width: 25vw;
     border: none;
     padding: .5vw;
-    font-size: .8rem;
 }
     
 .signupContainer input {
@@ -130,7 +130,6 @@ form{
 .signupContainer p {
     padding: 1rem;
     text-align: center;
-    font-size: .8rem;
 }
     
 form{
