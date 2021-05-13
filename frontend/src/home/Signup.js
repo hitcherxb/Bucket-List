@@ -3,6 +3,7 @@ import "./signup.css";
 import { useState, useContext } from 'react';
 import actions from '../api';
 import TheContext from '../TheContext';
+import {Link} from 'react-router-dom';
 
 function Signup(props) {
 
@@ -20,18 +21,20 @@ function Signup(props) {
 
     return (
         <div className="signupPage">
-            <h1 id='title'>BucketList</h1>
-            <div className="signupForm">
-                <h1>Sign Up</h1>
-
-                <p>Sign up to create a bucket list and start living a life that inspires you!</p>
-                <form onSubmit={submitSignup}>
-                    <input type="text" placeholder="Username" onChange={((e) => setUsername(e.target.value))}></input><br></br>
-                    <input type="text" placeholder="Password" onChange={((e) => setPassword(e.target.value))}></input><br></br>
-                    <button>Sign Up</button>
-                </form>
-            </div>
-
+        <Link to="/"><h1 id='title'>BucketList</h1></Link>
+        <div className="signupContainer">
+        
+        <h2>Sign Up</h2>
+        
+        <p>Sign up to create a bucket list and start living a life that inspires you!</p>
+        <form onSubmit={submitSignup}>
+            <input type="text" placeholder= "Username" onChange={((e) => setUsername(e.target.value))}></input><br></br>
+            <input type="text" placeholder="Password" onChange={((e) => setPassword(e.target.value))}></input><br></br>
+            <button>Sign Up</button>
+        </form>
+        
+        </div>
+        
         </div>
     );
 }
