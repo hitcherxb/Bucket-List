@@ -22,11 +22,13 @@ function MyList(props) {
             <div className="bucketlistContainer">
                 <div className="mybucketlistHeader">
                     <h3 className="bucketHeader">My Bucket List</h3>
+                    <hr className='hrtag' />
                 </div>
                 <div className="bucketlist">
                     <form>
                         <div className="inputTitle">
-                            <input type="text" placeholder="Add Bucket List Item" />
+                            <input type="text" placeholder="Add bucket list item e.g. See the Statue of Liberty!" />
+
                         </div>
                         <div className="inputType">
                             <Dropdown>
