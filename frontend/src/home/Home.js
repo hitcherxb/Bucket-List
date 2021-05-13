@@ -15,8 +15,10 @@ function Home(props) {
             <div className="quoteContainer">
                 <h2 className="quote">Design a life you are inspired to live</h2>
             </div>
-            <div className="loginButton">
-                <Link to='/login'><h2>Let's Go</h2></Link>
+            <div className="loginContainer">
+                <div className="loginButton">
+                    <Link to='/login'><h2>Let's Go</h2></Link>
+                </div>
             </div>
         </div >
     );

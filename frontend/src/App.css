@@ -1,5 +1,19 @@
+.homeHeader{
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
 
-
+.loginContainer{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginButton{
+  display: flex;
+  justify-content: center;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -41,8 +55,8 @@
 /* Log in Button */
 .loginButton{
   background-color: whitesmoke;
-color: black;
-height: 40x;
+color: blue;
+height: 45x;
 width: 150px;
 border-radius: 15px;
 font: bold;
@@ -52,7 +66,6 @@ margin-top: 7%;
 }
 
 .loginButton:hover{
-  background-color: lightgrey;
   text-decoration: none;
 }
 /* Quote Section */
