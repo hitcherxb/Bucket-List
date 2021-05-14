@@ -8,7 +8,7 @@ import serverUrl from '../api'
 
 
 function MyList(props) {
-    const [button, setButton] = useState('Choose Place')
+    const [button, setButton] = useState('Choose Category')
     const [item, setItem] = useState('')
 
     const handleChoice = (e) => {
