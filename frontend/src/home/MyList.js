@@ -3,24 +3,22 @@ import { Link } from 'react-router-dom';
 import "./myList.css";
 import Dropdown from 'react-bootstrap/Dropdown'
 import axios from 'axios';
+import actions from '../api';
 
 function MyList(props) {
-    const [button, setButton] = useState('Choose Place');
-    const [listItem, setListItem] = useState("");
-    const [listItems, setListItems] = useState([]);
+    const [button, setButton] = useState('Choose Category');
+   
 
     const handleChoice = (e) => {
         e.preventDefault()
         setButton(e.target.outerText)
     }
+    
+   
 
-    useEffect(() => {
-        console.log(`fetch data for user ${props.match.params.userid}`)
-    }, [])
 
-    function handleChange(e) {
-        setListItem(e.target.value)
-    }
+
+
 
     return (
         <div className="bucketListPage">

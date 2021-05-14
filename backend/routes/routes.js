@@ -18,9 +18,6 @@ router.get(`/get-user`, authorize, async (req, res) => {
 })
 
 
-
-
-
 router.get(`/get-messages`, (req, res) => {
     Message.find().then(messages => res.json(messages))
 })
