@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken')
 const router = express.Router()
 const Message = require('../models/Message')
 const User = require('../models/User')
+const List = require('../models/List')
+const app = express()
 
 
 router.post(`/add-message`, authorize, (req, res) => {
@@ -75,6 +77,38 @@ router.post(`/signUp`, async (req, res) => {
     })
 
 })
+
+
+router.post(`/bucketList`, (req, res) => {
+    List.update({ user: User() }, { List: { button: req.body.button, item: req.body.item } })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

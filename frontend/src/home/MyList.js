@@ -4,20 +4,32 @@ import "./myList.css";
 import Dropdown from 'react-bootstrap/Dropdown'
 import axios from 'axios';
 import actions from '../api';
+import serverUrl from '../api'
+
 
 function MyList(props) {
-    const [button, setButton] = useState('Choose Category');
-   
+    const [button, setButton] = useState('Choose Place')
+    const [item, setItem] = useState('')
 
     const handleChoice = (e) => {
-        e.preventDefault()
         setButton(e.target.outerText)
     }
     
-   
+    const handleItem = (e) => {
+        console.log(e.target.value)
+        setItem(e.target.value)
+    }
+
+    useEffect(() => {
+        console.log(`fetch data for user ${props.match.params.userid}`)
+    }, [])
 
 
-
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        let res = await axios.post(`http://localhost:5000/api/bucketList`, { button, item })
+        console.log(res)
+    }
 
 
     return (
@@ -31,9 +43,9 @@ function MyList(props) {
                     <hr className='hrtag' />
                 </div>
                 <div className="bucketlist">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="inputTitle">
-                            <input type="text" placeholder="Add bucket list item here" />
+                            <input onChange={handleItem} type="text" placeholder="Add bucket list item here" />
 
                         </div>
                         <div className="inputType">
