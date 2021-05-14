@@ -3,11 +3,19 @@ import { Link } from 'react-router-dom';
 import "./myList.css";
 import Dropdown from 'react-bootstrap/Dropdown'
 import axios from 'axios';
+<<<<<<< HEAD
 import serverUrl from '../api'
 
 function MyList(props) {
     const [button, setButton] = useState('Choose Place')
     const [item, setItem] = useState('')
+=======
+
+function MyList(props) {
+    const [button, setButton] = useState('Choose Place');
+    const [listItem, setListItem] = useState("");
+    const [listItems, setListItems] = useState([]);
+>>>>>>> 7e09525c4ffb40fb0d65e54305824a56295f3c06
 
     const handleChoice = (e) => {
         setButton(e.target.outerText)
@@ -22,6 +30,7 @@ function MyList(props) {
         console.log(`fetch data for user ${props.match.params.userid}`)
     }, [])
 
+<<<<<<< HEAD
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -30,6 +39,11 @@ function MyList(props) {
     }
 
 
+=======
+    function handleChange(e) {
+        setListItem(e.target.value)
+    }
+>>>>>>> 7e09525c4ffb40fb0d65e54305824a56295f3c06
 
     return (
         <div className="bucketListPage">
