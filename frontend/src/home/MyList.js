@@ -14,7 +14,7 @@ function MyList(props) {
     const handleChoice = (e) => {
         setButton(e.target.outerText)
     }
-    
+
     const handleItem = (e) => {
         console.log(e.target.value)
         setItem(e.target.value)
