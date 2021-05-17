@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./myList.css";
-
+import Dropdown from 'react-bootstrap/Dropdown'
 
 function MyList(props) {
-    const [button, setButton] = useState('Choose Place')
+    const [button, setButton] = useState('Choose Category')
 
     const handleChoice = (props) => {
         setButton(props.target.outerText)

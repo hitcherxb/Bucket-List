@@ -43,6 +43,7 @@
     width: 60vw;
     justify-content: space-evenly;
 }
+
 .inputTitle input{
     width: 30vw;
     height: 5vh;
@@ -53,22 +54,24 @@
 }
 
 button{
-    font-size: 2em;
+    font-size: 3em;
+   
 }
 
 .inputAdd button{
     border-radius: 50%;
     font-size: 3em;
-    height: 4vw;
-    width: 4vw;
+    height: 3vw;
+    width: 3vw;
     background-color: #5688FF;
     color: white;
     display: flex;
     align-content: center;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     border: none;
 }
+
 #dropdown-basic{
     background: #FFFFFF;
     border: 2px solid #C4C4C4;
