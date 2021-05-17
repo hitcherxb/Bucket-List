@@ -1,11 +1,10 @@
-const express = require('express')
-const jwt = require('jsonwebtoken')
-const router = express.Router()
-const Message = require('../models/Message')
-const User = require('../models/User')
-const List = require('../models/List')
-const app = express()
-
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const router = express.Router();
+const Message = require('../models/Message');
+const User = require('../models/User');
+const List = require('../models/List');
+const app = express();
 
 // router.post(`/add-message`, authorize, (req, res) => {
 //     let msg = req.body
@@ -14,11 +13,10 @@ const app = express()
 // })
 
 router.get(`/get-user`, authorize, async (req, res) => {
-    //console.log("in get user after next", res.locals.user._id)
-    let user = await User.findById(res.locals.user._id)
-    res.json(user)
-})
-
+  //console.log("in get user after next", res.locals.user._id)
+  let user = await User.findById(res.locals.user._id);
+  res.json(user);
+});
 
 // router.get(`/get-messages`, (req, res) => {
 //     Message.find().then(messages => res.json(messages))
@@ -28,114 +26,83 @@ router.get(`/get-user`, authorize, async (req, res) => {
 //     Message.find({ ownerId: res.locals.user._id }).then(messages => res.json(messages))
 // })
 
-
 router.get(`/`, (req, res) => {
-    res.json({ serverWorks: true })
-})
+  res.json({ serverWorks: true });
+});
 
 router.post(`/login`, async (req, res) => {
+  //Find user
+  let user = await User.findOne({ user: req.body.user });
+  // let pass = await User.findOne({ pass: req.body.pass })
 
-    //Find user
-    let user = await User.findOne({ user: req.body.user })
-    // let pass = await User.findOne({ pass: req.body.pass })
+  if (user.pass != req.body.pass) {
+    res.json({ error: 'Password does not match' });
+  }
 
-    if (user.pass != req.body.pass) {
-        res.json({ error: 'Password does not match' })
-    }
+  //If no user >> Create User
+  // if (!user) {
+  //     user = await User.create(req.body)
+  // }
 
-    //If no user >> Create User
-    // if (!user) {
-    //     user = await User.create(req.body)
-    // }
-
-    //No matter what i have a user and now I can create the jwt token 
-    jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
-        res.json({ user, token })
-    })
-
-})
+  //No matter what i have a user and now I can create the jwt token
+  jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
+    res.json({ user, token });
+  });
+});
 
 router.post(`/signUp`, async (req, res) => {
+  //Find user
+  let user = await User.findOne({ user: req.body.user });
 
-    //Find user
-    let user = await User.findOne({ user: req.body.user })
+  // if (user.pass != req.body.pass) {
+  //     res.json({ error: 'Password does not match' })
+  // }
 
-    // if (user.pass != req.body.pass) {
-    //     res.json({ error: 'Password does not match' })
-    // }
+  //If no user >> Create User
+  if (!user) {
+    user = await User.create(req.body);
+  } else {
+    res.json({ error: 'User exists' });
+  }
 
-    //If no user >> Create User
-    if (!user) {
-        user = await User.create(req.body)
-    } else {
-        res.json({ error: 'User exists' })
-    }
-
-    //No matter what i have a user and now I can create the jwt token 
-    jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
-        res.json({ user, token })
-    })
-
-})
-
+  //No matter what i have a user and now I can create the jwt token
+  jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
+    res.json({ user, token });
+  });
+});
 
 router.post(`/bucketList`, async (req, res) => {
-    // List.update({ user: User() }, { List: { button: req.body.button, item: req.body.item } })
-    console.log('req', req.body);
-    const user = await User.findById(req.body.user);
-    console.log('user from submit list', user);
-    User.updateOne({ 'user': user.user }, { $push: { 'items': req.body.item }});
-    console.log('NEW USER', await User.findById(req.body.user));
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // List.update({ user: User() }, { List: { button: req.body.button, item: req.body.item } })
+  console.log('req', req.body);
+  const user = await User.findOneAndUpdate(
+    { _id: req.body.user },
+    { $push: { items: { button: req.body.button, item: req.body.item } } },
+    { new: true }
+  );
+  console.log(user);
+  res.status(200).json({
+    status: 'ok',
+    user,
+  });
+});
 
 function authorize(req, res, next) {
-    console.log('monkey in the mittle', req.headers)
-    if (req.headers.authorization) {
-        let token = req.headers.authorization.split(' ')[1]
-        console.log(token)
-        jwt.verify(token, 'secret key', async (err, data) => {
-            if (!err) {
-                console.log(data)
-                res.locals.user = data.user
-                next()
-            } else {
-                console.error(err)
-                res.json({ err })
-            }
-        })
-    } else {
-        res.status(403).json({ message: 'You dont have no token' })
-    }
-
+  console.log('monkey in the mittle', req.headers);
+  if (req.headers.authorization) {
+    let token = req.headers.authorization.split(' ')[1];
+    console.log(token);
+    jwt.verify(token, 'secret key', async (err, data) => {
+      if (!err) {
+        console.log(data);
+        res.locals.user = data.user;
+        next();
+      } else {
+        console.error(err);
+        res.json({ err });
+      }
+    });
+  } else {
+    res.status(403).json({ message: 'You dont have no token' });
+  }
 }
-module.exports = router
+module.exports = router;
