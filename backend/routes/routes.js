@@ -7,11 +7,11 @@ const List = require('../models/List')
 const app = express()
 
 
-router.post(`/add-message`, authorize, (req, res) => {
-    let msg = req.body
-    msg.ownerId = res.locals.user._id
-    Message.create(msg).then(message => res.json(message))
-})
+// router.post(`/add-message`, authorize, (req, res) => {
+//     let msg = req.body
+//     msg.ownerId = res.locals.user._id
+//     Message.create(msg).then(message => res.json(message))
+// })
 
 router.get(`/get-user`, authorize, async (req, res) => {
     //console.log("in get user after next", res.locals.user._id)
@@ -20,13 +20,13 @@ router.get(`/get-user`, authorize, async (req, res) => {
 })
 
 
-router.get(`/get-messages`, (req, res) => {
-    Message.find().then(messages => res.json(messages))
-})
+// router.get(`/get-messages`, (req, res) => {
+//     Message.find().then(messages => res.json(messages))
+// })
 
-router.get(`/get-my-messages`, authorize, (req, res) => {
-    Message.find({ ownerId: res.locals.user._id }).then(messages => res.json(messages))
-})
+// router.get(`/get-my-messages`, authorize, (req, res) => {
+//     Message.find({ ownerId: res.locals.user._id }).then(messages => res.json(messages))
+// })
 
 
 router.get(`/`, (req, res) => {
@@ -79,8 +79,13 @@ router.post(`/signUp`, async (req, res) => {
 })
 
 
-router.post(`/bucketList`, (req, res) => {
-    List.update({ user: User() }, { List: { button: req.body.button, item: req.body.item } })
+router.post(`/bucketList`, async (req, res) => {
+    // List.update({ user: User() }, { List: { button: req.body.button, item: req.body.item } })
+    console.log('req', req.body);
+    const user = await User.findById(req.body.userId);
+    console.log('user from submit list', user);
+    User.updateOne({ 'user': user.user }, { $push: { 'items': req.body.item }});
+    console.log('NEW USER', await User.findById(req.body.userId));
 })
 
 

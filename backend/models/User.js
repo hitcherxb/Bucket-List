@@ -7,8 +7,7 @@ const userSchema = new Schema({
     googleId: String,
     user: String,
     pass: String,
-
-
+    items: [String],
 })
 
 const User = model('User', userSchema)
