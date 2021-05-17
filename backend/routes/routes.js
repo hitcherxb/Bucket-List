@@ -82,10 +82,10 @@ router.post(`/signUp`, async (req, res) => {
 router.post(`/bucketList`, async (req, res) => {
     // List.update({ user: User() }, { List: { button: req.body.button, item: req.body.item } })
     console.log('req', req.body);
-    const user = await User.findById(req.body.userId);
+    const user = await User.findById(req.body.user);
     console.log('user from submit list', user);
     User.updateOne({ 'user': user.user }, { $push: { 'items': req.body.item }});
-    console.log('NEW USER', await User.findById(req.body.userId));
+    console.log('NEW USER', await User.findById(req.body.user));
 })
 
 

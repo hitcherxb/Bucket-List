@@ -27,7 +27,7 @@ function MyList(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        let res = await axios.post(`http://localhost:5000/api/bucketList`, { button, item, userId: props.match.params.userid })
+        let res = await axios.post(`http://localhost:5000/api/bucketList`, { button, item, user: props.match.params.userid })
         console.log('FE response', res);
     }
 
