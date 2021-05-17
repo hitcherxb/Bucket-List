@@ -1,17 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "./myList.css";
 import Dropdown from 'react-bootstrap/Dropdown'
+import axios from 'axios';
+import actions from '../api';
+import serverUrl from '../api'
+
 
 function MyList(props) {
     const [button, setButton] = useState('Choose Category')
+    const [item, setItem] = useState('')
 
-    const handleChoice = (props) => {
-        setButton(props.target.outerText)
+    const handleChoice = (e) => {
+        setButton(e.target.outerText)
     }
 
+    const handleItem = (e) => {
+        console.log(e.target.value)
+        setItem(e.target.value)
+    }
+
+    useEffect(() => {
+        console.log(`fetch data for user ${props.match.params.userid}`)
+    }, [])
 
 
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        let res = await axios.post(`http://localhost:5000/api/bucketList`, { button, item, userId: props.match.params.userid })
+        console.log('FE response', res);
+    }
 
 
     return (
@@ -25,9 +43,9 @@ function MyList(props) {
                     <hr className='hrtag' />
                 </div>
                 <div className="bucketlist">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="inputTitle">
-                            <input type="text" placeholder="Add bucket list item e.g. See the Statue of Liberty!" />
+                            <input onChange={handleItem} type="text" placeholder="Add bucket list item here" />
 
                         </div>
                         <div className="inputType">

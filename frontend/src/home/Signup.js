@@ -9,12 +9,19 @@ function Signup(props) {
 
     const [user, setUsername] = useState('');
     const [pass, setPassword] = useState('');
+    const [error, setError] = useState("");
     let { setUser } = useContext(TheContext);
 
     const submitSignup = (e) => {
         e.preventDefault()
-        actions.signUp({ user, pass }).then(user => {
-            setUser(user)
+        actions.signUp({ user, pass }).then(data => {
+            console.log(data)
+            if(data.user){
+            setUser(data.user)
+            props.history.push(`/bucketlist/${data.user._id}`)
+        } else {
+            setError(data.error)
+        }
         })
     }
 
@@ -31,6 +38,7 @@ function Signup(props) {
             <input type="text" placeholder= "Username" onChange={((e) => setUsername(e.target.value))}></input><br></br>
             <input type="text" placeholder="Password" onChange={((e) => setPassword(e.target.value))}></input><br></br>
             <button>Sign Up</button>
+            {error}
         </form>
         
         </div>

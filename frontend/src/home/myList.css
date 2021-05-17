@@ -1,3 +1,103 @@
+
+.bucketListPage{
+    background-image: url("../pictures/profilebg.png");
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bucketListHeader{
+    color: #5688ff;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-left: 1%;
+}
+
+.bucketHeader{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 2%;
+}
+
+.bucketlistContainer{
+    background: white;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    height: 85vh;
+    border-radius: 16px;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.bucketlist form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.inputTitle input{
+    width: 75vw;
+    height: 5vh;
+    border-radius: 16px;
+    text-align: center;
+    color: #848484;
+    border: 2px solid #C4C4C4;
+    margin: 1vw;
+}
+
+
+.inputAdd button{
+    border-radius: 16px;
+    font-size: 1.5em;
+    height: 4vh;
+    width: 40vw;
+    background-color: #5688FF;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+#dropdown-basic{
+    background: #FFFFFF;
+    border: 2px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 16px;
+    color: #848484;
+    width: 75vw;
+    height: 5vh;
+    margin-bottom: 1vw;
+}
+
+ .hrtag{
+    border: 3px solid #CCD4E7;
+    border-radius: 5px;
+    width: 15vw;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For Desktop */
+
+@media (min-width: 900px) {
+
 .bucketListPage{
     background-image: url("../pictures/profilebg.png");
     height: 100vh;
@@ -47,30 +147,23 @@
 .inputTitle input{
     width: 30vw;
     height: 5vh;
-    border-radius: 9px;
+    border-radius: 16px;
     text-align: center;
     color: #848484;
     border: 2px solid #C4C4C4;
 }
 
-button{
-    font-size: 3em;
-   
-}
 
 .inputAdd button{
     border-radius: 50%;
-    font-size: 3em;
-    height: 3vw;
-    width: 3vw;
+    font-size: 3rem;
+    height: 40px;
+    width: 40px;
     background-color: #5688FF;
     color: white;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
     border: none;
 }
+
 
 #dropdown-basic{
     background: #FFFFFF;
@@ -78,12 +171,15 @@ button{
     box-sizing: border-box;
     border-radius: 16px;
     color: #848484;
-    width: 15vw;
-    height: 3.4vw;
+    width: 18vw;
+    height: 5vh;
+    margin: 0;
 }
 
  .hrtag{
     border: 3px solid #CCD4E7;
     border-radius: 5px;
-    width: 8vw;
+    width: 15vw;
  }
+
+}
