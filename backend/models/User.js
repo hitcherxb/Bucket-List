@@ -8,6 +8,7 @@ const userSchema = new Schema({
     user: String,
     pass: String,
 
+
 })
 
 const User = model('User', userSchema)

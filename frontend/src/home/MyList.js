@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import "./myList.css";
 import Dropdown from 'react-bootstrap/Dropdown'
 import axios from 'axios';
+import actions from '../api';
 import serverUrl from '../api'
 
+
 function MyList(props) {
-    const [button, setButton] = useState('Choose Place')
+    const [button, setButton] = useState('Choose Category')
     const [item, setItem] = useState('')
 
     const handleChoice = (e) => {
@@ -28,7 +30,6 @@ function MyList(props) {
         let res = await axios.post(`http://localhost:5000/api/bucketList`, { button, item })
         console.log(res)
     }
-
 
 
     return (

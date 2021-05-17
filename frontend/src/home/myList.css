@@ -45,27 +45,23 @@
 .inputTitle input{
     width: 75vw;
     height: 5vh;
-    border-radius: 9px;
+    border-radius: 16px;
     text-align: center;
     color: #848484;
     border: 2px solid #C4C4C4;
     margin: 1vw;
 }
 
-button{
-    font-size: 2em;
-}
 
 .inputAdd button{
-    border-radius: 0%;
-    font-size: 1em;
-    height: 7vw;
+    border-radius: 16px;
+    font-size: 1.5em;
+    height: 4vh;
     width: 40vw;
     background-color: #5688FF;
     color: white;
     display: flex;
-    align-content: center;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     border: none;
 }
@@ -76,14 +72,14 @@ button{
     border-radius: 16px;
     color: #848484;
     width: 75vw;
-    height: 11vw;
+    height: 5vh;
     margin-bottom: 1vw;
 }
 
  .hrtag{
     border: 3px solid #CCD4E7;
     border-radius: 5px;
-    width: 8vw;
+    width: 15vw;
  }
 
 
@@ -150,44 +146,39 @@ button{
 .inputTitle input{
     width: 30vw;
     height: 5vh;
-    border-radius: 9px;
+    border-radius: 16px;
     text-align: center;
     color: #848484;
     border: 2px solid #C4C4C4;
 }
 
-button{
-    font-size: 2em;
-}
 
 .inputAdd button{
     border-radius: 50%;
-    font-size: 3em;
-    height: 4vw;
-    width: 4vw;
+    font-size: 3rem;
+    height: 40px;
+    width: 40px;
     background-color: #5688FF;
     color: white;
-    display: flex;
-    align-content: center;
-    align-items: flex-end;
-    justify-content: center;
     border: none;
 }
+
+
 #dropdown-basic{
     background: #FFFFFF;
     border: 2px solid #C4C4C4;
     box-sizing: border-box;
     border-radius: 16px;
     color: #848484;
-    width: 15vw;
-    height: 5vw;
+    width: 18vw;
+    height: 5vh;
     margin: 0;
 }
 
  .hrtag{
     border: 3px solid #CCD4E7;
     border-radius: 5px;
-    width: 8vw;
+    width: 15vw;
  }
 
 }

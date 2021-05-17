@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
+const User = require("./models/User")
 
 
 mongoose
@@ -13,7 +14,6 @@ mongoose
 app.use(express.json())
 
 app.use(cors())
-
 
 app.use('/api', require('./routes/routes.js'))
 

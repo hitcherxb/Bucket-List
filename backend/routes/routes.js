@@ -82,9 +82,9 @@ router.post(`/signUp`, async (req, res) => {
 })
 
 
-router.post(`/bucketList`, (req, res) => {
-    List.update({ user: User() }, { List: { button: req.body.button, item: req.body.item } })
-})
+// router.post(`/bucketList`, (req, res) => {
+//     List.update($push: {  }, { List: { button: req.body.button, item: req.body.item } })
+// })
 
 
 
