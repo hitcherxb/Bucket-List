@@ -86,6 +86,10 @@ router.post(`/bucketList`, async (req, res) => {
   });
 });
 
+router.get("/getItem", (req, res) => User.find().then((response) => res.json(response)))
+
+
+
 function authorize(req, res, next) {
   console.log('monkey in the mittle', req.headers);
   if (req.headers.authorization) {

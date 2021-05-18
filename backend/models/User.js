@@ -13,17 +13,6 @@ const userSchema = new Schema({
   items: [itemSchema],
 });
 
-<<<<<<< HEAD
-    imageUrl: String,
-    name: String,
-    googleId: String,
-    user: String,
-    pass: String,
-    button: String,
-    item: [String],
-})
-=======
 const User = model('User', userSchema);
->>>>>>> 15502a260648327e465a287ac427f3993bd2bf9a
 
 module.exports = User;
