@@ -10,6 +10,7 @@ import Entertainment from '../pictures/entertainment-icon.png'
 import Travel from '../pictures/travel-icon.png'
 import Dining from '../pictures/dining-icon.png'
 import Miscellaneous from '../pictures/misc-icon.png'
+import Form from "react-bootstrap/Form"
 
 
 function MyList(props) {
@@ -51,15 +52,31 @@ function MyList(props) {
         }
     }
 
+    const checkBox = (e) => {
+        return <Form>
+            {['checkbox'].map((type) => (
+                <div key={type} className="mb-3">
+                    <Form.Check type={type} id={`check-api-${type}`}>
+                        <Form.Check.Input type={type} isValid />
+
+                    </Form.Check>
+                </div>
+            ))}
+        </Form>
+    }
+
     const displayItems = (e) => {
         return items.map(thing => {
             return (
-                <div>
-                    <div>
+                <div className="bucketLine">
+                    <div className="bucketPic">
                         {logo(thing)}
                     </div>
-                    <div>
+                    <div className="bucketItem">
                         {thing.item}
+                    </div>
+                    <div className="bucketCheckBox">
+                        {checkBox()}
                     </div>
                 </div>
             )
@@ -130,7 +147,9 @@ function MyList(props) {
                             <button>+</button>
                         </div>
                     </form>
-                    <div>{displayItems()}</div>
+                    <div className="bucketContainer">
+                        {displayItems()}
+                    </div>
                 </div>
             </div>
             {/* <ShowItems/> */}
