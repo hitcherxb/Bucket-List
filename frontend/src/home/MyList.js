@@ -10,6 +10,7 @@ import serverUrl from '../api'
 function MyList(props) {
     const [button, setButton] = useState('Choose Category')
     const [item, setItem] = useState('')
+    const [items, setItems] = useState('')
 
     const handleChoice = (e) => {
         setButton(e.target.outerText)
@@ -22,12 +23,18 @@ function MyList(props) {
 
     useEffect(() => {
         console.log(`fetch data for user ${props.match.params.userid}`)
-        axios.get("http://localhost:5000/api/getItem")
+        axios.get("http://localhost:5000/api/getItems")
         .then((res) => {
             console.log(res.data)
-            setItem(res.data)
+            setItems(res.data)
         })
     }, [])
+
+    // const showItems = () => {
+    //     return items.map((listitem)=> (
+    //         console.log(listitem)
+    //     ))
+    // }
 
 
     const handleSubmit = async (e) => {

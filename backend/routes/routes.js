@@ -86,7 +86,7 @@ router.post(`/bucketList`, async (req, res) => {
   });
 });
 
-router.get("/getItem", (req, res) => User.find().then((response) => res.json(response)))
+router.get("/getItems", (req, res) => User.find().then((response) => res.json(response)))
 
 
 
