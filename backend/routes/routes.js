@@ -72,20 +72,27 @@ router.post(`/signUp`, async (req, res) => {
 });
 
 router.post(`/bucketList`, async (req, res) => {
-  console.log('req', req.body);
+  // List.update({ user: User() }, { List: { button: req.body.button, item: req.body.item } })
+  // console.log('req', req.body);
   const user = await User.findOneAndUpdate(
     { _id: req.body.user },
     { $push: { items: { button: req.body.button, item: req.body.item } } },
     { new: true }
   );
-  console.log(user);
+  // console.log(user);
   res.status(200).json({
     status: 'ok',
     user,
   });
 });
 
-router.get("/getItems", (req, res) => User.find().then((response) => res.json(response)))
+router.get("/getUser", (req, res) => User.find().then((response) => res.json(response)))
+
+
+
+
+
+
 
 
 
