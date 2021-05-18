@@ -86,6 +86,19 @@ router.post(`/bucketList`, async (req, res) => {
   });
 });
 
+router.get('/getItems', (req, res) => {
+  console.log(req)
+})
+
+
+
+
+
+
+
+
+
+
 function authorize(req, res, next) {
   console.log('monkey in the mittle', req.headers);
   if (req.headers.authorization) {
