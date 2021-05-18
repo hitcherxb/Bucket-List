@@ -128,7 +128,7 @@
     width: 60vw;
     display: flex;
     flex-direction: column;
-    
+   
     position: absolute;
     left: 20%;
     top: 15%;
@@ -182,5 +182,49 @@
     width: 15vw;
  }
 
+.bucketPic img{
+    width: 80%;
+    height: 90%;
+    border-radius: 50%;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+.bucketPic{
+    width:15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bucketItem{
+    width: 35vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bucketLine{
+    display: flex;
+    height: 8vh;
+    width: 50vw;
+    border: solid 1px gray;
+    margin-left: 5vw;
+    margin-top: .5rem;
+   
+}
+.bucketCheckBox{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+}
+.bucketCheckBox Form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.bucketContainer{
+    overflow-y: scroll;
+    max-height: 45vh;
+}
 
 }
