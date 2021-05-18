@@ -22,6 +22,11 @@ function MyList(props) {
 
     useEffect(() => {
         console.log(`fetch data for user ${props.match.params.userid}`)
+        axios.get("http://localhost:5000/api/getItem")
+            .then((res) => {
+                console.log(res.data)
+                setItem(res.data)
+            })
     }, [])
 
 
