@@ -5,13 +5,17 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import axios from 'axios';
 import actions from '../api';
 import serverUrl from '../api'
+import Adventure from '../pictures/adventure-icon.png'
+import Entertainment from '../pictures/entertainment-icon.png'
+import Travel from '../pictures/travel-icon.png'
+import Dining from '../pictures/dining-icon.png'
+import Miscellaneous from '../pictures/misc-icon.png'
 
 
 function MyList(props) {
     const [button, setButton] = useState('Choose Category')
     const [item, setItem] = useState('')
     const [items, setItems] = useState([])
-
     const handleChoice = (e) => {
         setButton(e.target.outerText)
     }
@@ -21,15 +25,41 @@ function MyList(props) {
         setItem(e.target.value)
     }
 
+    const logo = (thing) => {
+        switch (true) {
+            case (thing.button == 'Adventure'):
+
+                return <img src={Adventure} />
+
+            case (thing.button == 'Entertainment'):
+
+                return <img src={Entertainment} />
+
+            case (thing.button == 'Travel'):
+
+                return <img src={Travel} />
+
+            case (thing.button == 'Dining'):
+
+                return <img src={Dining} />
+
+            case (thing.button == 'Miscellaneous'):
+
+                return <img src={Miscellaneous} />
+
+
+        }
+    }
+
     const displayItems = (e) => {
         return items.map(thing => {
             return (
                 <div>
                     <div>
-                        {thing.item}
+                        {logo(thing)}
                     </div>
                     <div>
-                        {thing.button}
+                        {thing.item}
                     </div>
                 </div>
             )
@@ -89,7 +119,7 @@ function MyList(props) {
 
                                 <Dropdown.Menu >
                                     <Dropdown.Item onClick={handleChoice}>Adventure</Dropdown.Item>
-                                    <Dropdown.Item onClick={handleChoice}>Entertainment </Dropdown.Item>
+                                    <Dropdown.Item onClick={handleChoice}>Entertainment</Dropdown.Item>
                                     <Dropdown.Item onClick={handleChoice}>Travel</Dropdown.Item>
                                     <Dropdown.Item onClick={handleChoice}>Dining</Dropdown.Item>
                                     <Dropdown.Item onClick={handleChoice}>Miscellaneous</Dropdown.Item>
