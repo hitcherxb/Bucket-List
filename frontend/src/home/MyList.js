@@ -4,7 +4,7 @@ import "./myList.css";
 import Dropdown from 'react-bootstrap/Dropdown'
 import axios from 'axios';
 import actions from '../api';
-import serverUrl from '../api'
+
 
 
 function MyList(props) {
@@ -26,10 +26,10 @@ function MyList(props) {
             return (
                 <div>
                     <div>
-                        {thing.item}
+                      
                     </div>
                     <div>
-                        {thing.button}
+                        {thing.item}
                     </div>
                 </div>
             )
