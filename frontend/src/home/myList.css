@@ -58,7 +58,7 @@
     font-size: 1.5em;
     height: 4vh;
     width: 40vw;
-    background-color: #5688FF;
+    background-color: #5688ff;
     color: white;
     display: flex;
     align-items: center;
@@ -77,10 +77,59 @@
 }
 
  .hrtag{
-    border: 3px solid #CCD4E7;
+    border: 3px solid #5688ff;
     border-radius: 5px;
     width: 15vw;
  }
+
+ .bucketPic img{
+    height: 75%;
+    border-radius: 50%;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+.bucketPic{
+    width:15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4vw;
+}
+
+.bucketItem{
+    width: 35vw;
+    display: flex;
+    align-items: center;
+    overflow-y: hidden;
+    margin-left: 7vw;
+}
+.bucketLine{
+    display: flex;
+    height: 10vh;
+    width: 80vw;
+    border: solid 1px #5688ff;
+    border-radius: 16px;
+    margin-left: 5vw;
+    margin-top: .5rem;
+    justify-content: space-around;
+   
+}
+.bucketCheckBox{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+}
+.bucketCheckBox Form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.bucketContainer{
+    overflow-y: scroll;
+    max-height: 45vh;
+    margin-top: 1vh;
+}
 
 
 
@@ -128,7 +177,6 @@
     width: 60vw;
     display: flex;
     flex-direction: column;
-   
     position: absolute;
     left: 20%;
     top: 15%;
@@ -159,9 +207,10 @@
     font-size: 3rem;
     height: 40px;
     width: 40px;
-    background-color: #5688FF;
-    color: white;
+    background-color: white;
+    color: #5688ff;
     border: none;
+    margin-bottom: 1vh;
 }
 
 
@@ -177,7 +226,7 @@
 }
 
  .hrtag{
-    border: 3px solid #CCD4E7;
+    border: 3px solid #5688ff;
     border-radius: 5px;
     width: 15vw;
  }
@@ -209,6 +258,7 @@
     height: 8vh;
     width: 50vw;
     border: solid 1px #5688ff;
+    border-radius: 16px;
     margin-left: 5vw;
     margin-top: .5rem;
    
@@ -228,5 +278,4 @@
     overflow-y: scroll;
     max-height: 45vh;
 }
-
 }
