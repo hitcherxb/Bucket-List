@@ -72,7 +72,6 @@ router.post(`/signUp`, async (req, res) => {
 });
 
 router.post(`/bucketList`, async (req, res) => {
-  // List.update({ user: User() }, { List: { button: req.body.button, item: req.body.item } })
   console.log('req', req.body);
   const user = await User.findOneAndUpdate(
     { _id: req.body.user },
