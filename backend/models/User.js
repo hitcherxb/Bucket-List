@@ -11,6 +11,7 @@ const userSchema = new Schema({
   user: String,
   pass: String,
   items: [itemSchema],
+  description: String,
 });
 
 const User = model('User', userSchema);

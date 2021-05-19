@@ -21,6 +21,7 @@ function MyList(props) {
     const [item, setItem] = useState('')
     const [items, setItems] = useState([])
     const [modalShow, setModalShow] = useState(false);
+    const [description, setDescription] = useState('')
 
     //Grabbing button Choice
 
@@ -116,8 +117,19 @@ function MyList(props) {
 
     }, [])
 
+
+
     const handleModalClose = () => {
         setModalShow(false)
+    }
+
+
+
+    const handleSubmitDescription = async (e) => {
+        e.preventDefault()
+        setDescription(e.target[0].value)
+        let res = await axios.post(`http://localhost:5000/api/feed`, { description, user: props.match.params.userid })
+        console.log('FE response', res);
     }
 
     //Modal
@@ -134,40 +146,24 @@ function MyList(props) {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        You Did It! 
+                        You Did It!
               </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <form onSubmit={handleSubmitDescription}>
+
                     <h4>Add a Description</h4>
                     <input type="text">
-                        
+
                     </input>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button onClick={handleModalClose}>Add to Feed</Button>
-                </Modal.Footer>
+
+                    <button type='submit'>Add to Feed</button>
+
+                </form>
             </Modal>
         );
     }
 
-    //   function App() {
-    //     const [modalShow, setModalShow] = React.useState(false);
 
-    //     // return (
-    //     //   <>
-    //     //     <Button variant="primary" onClick={() => setModalShow(true)}>
-    //     //       Launch vertically centered modal
-    //     //     </Button>
-
-    //     //     <MyVerticallyCenteredModal
-    //     //       show={modalShow}
-    //     //       onHide={() => setModalShow(false)}
-    //     //     />
-    //     //   </>
-    //     // );
-    //   }
-
-    //   render(<App />);
 
 
 

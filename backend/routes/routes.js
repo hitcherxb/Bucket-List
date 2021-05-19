@@ -73,6 +73,18 @@ router.post(`/bucketList`, async (req, res) => {
   });
 });
 
+router.post(`/feed`, async (req, res) => {
+  const user = await User.findOneAndUpdate(
+    { _id: req.body.user },
+    { $push: { description: req.body.description } },
+    { new: true }
+  );
+  res.status(200).json({
+    status: 'ok',
+    user,
+  });
+});
+
 router.get("/getUser", (req, res) => User.find().then((response) => res.json(response)))
 
 
