@@ -89,20 +89,6 @@ function MyList(props) {
 
     }, [])
 
-    // useEffect(() => {
-    //     console.log(`fetch data for user ${props.match.params.userid}`)
-    //     axios.get("http://localhost:5000/api/getUser")
-    //         .then((res) => {
-    //             console.log(res.data)
-    //             setItems(res.data)
-    //         })
-    // }, [])
-
-    // const showItems = () => {
-    //     return items.map((listitem)=> (
-    //         console.log(listitem)
-    //     ))
-    // }
 
 
     const handleSubmit = async (e) => {
