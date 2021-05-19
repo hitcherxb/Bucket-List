@@ -11,12 +11,16 @@ import Travel from '../pictures/travel-icon.png'
 import Dining from '../pictures/dining-icon.png'
 import Miscellaneous from '../pictures/misc-icon.png'
 import Form from "react-bootstrap/Form"
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+
 
 
 function MyList(props) {
-    const [button, setButton] = useState('Choose Category')  
+    const [button, setButton] = useState('Choose Category')
     const [item, setItem] = useState('')
     const [items, setItems] = useState([])
+    const [modalShow, setModalShow] = useState(false);
 
     //Grabbing button Choice
 
@@ -66,7 +70,10 @@ function MyList(props) {
             {['checkbox'].map((type) => (
                 <div key={type} className="mb-3">
                     <Form.Check type={type} id={`check-api-${type}`}>
-                        <Form.Check.Input type={type} isValid />
+                        <Form.Check.Input onClick={() => {
+                            setModalShow(true)
+                            console.log('test')
+                        }} type={type} isValid />
 
                     </Form.Check>
                 </div>
@@ -109,6 +116,61 @@ function MyList(props) {
 
     }, [])
 
+    const handleModalClose = () => {
+        setModalShow(false)
+    }
+
+    //Modal
+
+    function MyVerticallyCenteredModal(props) {
+        return (
+            <Modal
+                show={modalShow}
+                onHide={handleModalClose}
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title id="contained-modal-title-vcenter">
+                        Modal heading
+              </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <h4>Centered Modal</h4>
+                    <p>
+                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+                        consectetur ac, vestibulum at eros.
+              </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={handleModalClose}>Close</Button>
+                </Modal.Footer>
+            </Modal>
+        );
+    }
+
+    //   function App() {
+    //     const [modalShow, setModalShow] = React.useState(false);
+
+    //     // return (
+    //     //   <>
+    //     //     <Button variant="primary" onClick={() => setModalShow(true)}>
+    //     //       Launch vertically centered modal
+    //     //     </Button>
+
+    //     //     <MyVerticallyCenteredModal
+    //     //       show={modalShow}
+    //     //       onHide={() => setModalShow(false)}
+    //     //     />
+    //     //   </>
+    //     // );
+    //   }
+
+    //   render(<App />);
+
 
 
 
@@ -122,7 +184,7 @@ function MyList(props) {
             <div className="bucketlistContainer">
                 <div className="mybucketlistHeader">
 
-                    //Logo
+                    {/* Logo */}
 
                     <h3 className="bucketHeader">My Bucket List</h3>
                     <hr className='hrtag' />
@@ -130,14 +192,14 @@ function MyList(props) {
                 <div className="bucketlist">
                     <form onSubmit={handleSubmit}>
 
-                        //input
-                        
+                        {/* input */}
+
                         <div className="inputTitle">
                             <input onChange={handleItem} type="text" placeholder="Add bucket list item here" />
 
                         </div>
 
-                        //Dropdown Options
+                        {/* Dropdown Options */}
 
                         <div className="inputType">
                             <Dropdown>
@@ -155,7 +217,7 @@ function MyList(props) {
                             </Dropdown>
                         </div>
 
-                        // Add Button
+                        {/* Add Button */}
 
                         <div className="inputAdd">
                             <button>+</button>
@@ -163,12 +225,14 @@ function MyList(props) {
                     </form>
                     <div className="bucketContainer">
 
-                    //Display bucketlist items
-                    
+                        {/* Display bucketlist items */}
+
                         {displayItems()}
+
                     </div>
                 </div>
             </div>
+            <MyVerticallyCenteredModal />
         </div>
     );
 }
