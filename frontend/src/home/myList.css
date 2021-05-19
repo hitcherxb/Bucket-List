@@ -252,6 +252,7 @@
     align-items: center;
     font-size: 1.6rem;
     overflow-y: hidden;
+    margin: 0;
 }
 .bucketLine{
     display: flex;
@@ -277,5 +278,9 @@
 .bucketContainer{
     overflow-y: scroll;
     max-height: 45vh;
+}
+.modal-body input {
+    width: 45vw;
+    height: 20vh;
 }
 }

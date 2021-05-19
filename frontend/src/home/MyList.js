@@ -134,19 +134,17 @@ function MyList(props) {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        Modal heading
+                        You Did It! 
               </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <h4>Centered Modal</h4>
-                    <p>
-                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                        consectetur ac, vestibulum at eros.
-              </p>
+                    <h4>Add a Description</h4>
+                    <input type="text">
+                        
+                    </input>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={handleModalClose}>Close</Button>
+                    <Button onClick={handleModalClose}>Add to Feed</Button>
                 </Modal.Footer>
             </Modal>
         );
