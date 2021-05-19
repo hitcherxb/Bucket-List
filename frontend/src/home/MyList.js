@@ -14,17 +14,24 @@ import Form from "react-bootstrap/Form"
 
 
 function MyList(props) {
-    const [button, setButton] = useState('Choose Category')
+    const [button, setButton] = useState('Choose Category')  
     const [item, setItem] = useState('')
     const [items, setItems] = useState([])
+
+    //Grabbing button Choice
+
     const handleChoice = (e) => {
         setButton(e.target.outerText)
     }
+
+    //Grabbing input 
 
     const handleItem = (e) => {
         console.log(e.target.value)
         setItem(e.target.value)
     }
+
+    // Changing the logo picture
 
     const logo = (thing) => {
         switch (true) {
@@ -52,6 +59,8 @@ function MyList(props) {
         }
     }
 
+    // CheckBox
+
     const checkBox = (e) => {
         return <Form>
             {['checkbox'].map((type) => (
@@ -64,6 +73,8 @@ function MyList(props) {
             ))}
         </Form>
     }
+
+    //Display bucketlist items
 
     const displayItems = (e) => {
         return items.map(thing => {
@@ -83,6 +94,15 @@ function MyList(props) {
         })
     }
 
+    //Pushing info
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        let res = await axios.post(`http://localhost:5000/api/bucketList`, { button, item, user: props.match.params.userid })
+        console.log('FE response', res);
+    }
+
+    // Grabbing info
 
     useEffect(() => {
         actions.getUser().then(res => setItems(res.data.items))
@@ -91,11 +111,7 @@ function MyList(props) {
 
 
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        let res = await axios.post(`http://localhost:5000/api/bucketList`, { button, item, user: props.match.params.userid })
-        console.log('FE response', res);
-    }
+
 
 
     return (
@@ -105,15 +121,24 @@ function MyList(props) {
 
             <div className="bucketlistContainer">
                 <div className="mybucketlistHeader">
+
+                    //Logo
+
                     <h3 className="bucketHeader">My Bucket List</h3>
                     <hr className='hrtag' />
                 </div>
                 <div className="bucketlist">
                     <form onSubmit={handleSubmit}>
+
+                        //input
+                        
                         <div className="inputTitle">
                             <input onChange={handleItem} type="text" placeholder="Add bucket list item here" />
 
                         </div>
+
+                        //Dropdown Options
+
                         <div className="inputType">
                             <Dropdown>
                                 <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -129,16 +154,21 @@ function MyList(props) {
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
+
+                        // Add Button
+
                         <div className="inputAdd">
                             <button>+</button>
                         </div>
                     </form>
                     <div className="bucketContainer">
+
+                    //Display bucketlist items
+                    
                         {displayItems()}
                     </div>
                 </div>
             </div>
-            {/* <ShowItems/> */}
         </div>
     );
 }
