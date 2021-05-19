@@ -138,6 +138,7 @@ function MyList(props) {
                     </div>
                 </div>
             </div>
+            {/* <ShowItems/> */}
         </div>
     );
 }

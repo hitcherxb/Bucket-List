@@ -33,16 +33,10 @@ router.get(`/`, (req, res) => {
 router.post(`/login`, async (req, res) => {
   //Find user
   let user = await User.findOne({ user: req.body.user });
-  // let pass = await User.findOne({ pass: req.body.pass })
 
   if (user.pass != req.body.pass) {
     res.json({ error: 'Password does not match' });
   }
-
-  //If no user >> Create User
-  // if (!user) {
-  //     user = await User.create(req.body)
-  // }
 
   //No matter what i have a user and now I can create the jwt token
   jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
@@ -53,10 +47,6 @@ router.post(`/login`, async (req, res) => {
 router.post(`/signUp`, async (req, res) => {
   //Find user
   let user = await User.findOne({ user: req.body.user });
-
-  // if (user.pass != req.body.pass) {
-  //     res.json({ error: 'Password does not match' })
-  // }
 
   //If no user >> Create User
   if (!user) {
@@ -72,14 +62,11 @@ router.post(`/signUp`, async (req, res) => {
 });
 
 router.post(`/bucketList`, async (req, res) => {
-  // List.update({ user: User() }, { List: { button: req.body.button, item: req.body.item } })
-  // console.log('req', req.body);
   const user = await User.findOneAndUpdate(
     { _id: req.body.user },
     { $push: { items: { button: req.body.button, item: req.body.item } } },
     { new: true }
   );
-  // console.log(user);
   res.status(200).json({
     status: 'ok',
     user,
@@ -87,13 +74,6 @@ router.post(`/bucketList`, async (req, res) => {
 });
 
 router.get("/getUser", (req, res) => User.find().then((response) => res.json(response)))
-
-
-
-
-
-
-
 
 
 function authorize(req, res, next) {
