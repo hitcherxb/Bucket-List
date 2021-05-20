@@ -2,7 +2,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import "./MyFeed.css";
 import actions from "../api";
-import TheContext from '../TheContext'
+import TheContext from '../TheContext';
+import AdventureFeed from "../pictures/AdventureFeed.jpeg"
 
 function MyFeed(props) {
 
@@ -21,10 +22,11 @@ function MyFeed(props) {
     function displayFeed() {
         return info.map((e) => {
             return (
-                <div>
-                    <div>{e.item}</div>
-                    <div>{e.description}</div>
-                </div>
+                <div className="feedSection">
+                    <div><img src={AdventureFeed}></img></div>
+                    <div className="feedTitle">{e.item}</div>
+                    <div className="feedDescription">{e.description}</div>
+                </div >
             )
         })
     }
@@ -39,6 +41,7 @@ function MyFeed(props) {
             <h4>My Feed</h4>
             <hr className='hrtag' />
             <div className="feedContainer">
+
                 {displayFeed()}
             </div>
         </div>
