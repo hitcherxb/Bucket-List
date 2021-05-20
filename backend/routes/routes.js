@@ -75,10 +75,9 @@ router.post(`/bucketList`, async (req, res) => {
 
 router.post(`/feed`, async (req, res) => {
   const user = await User.findOneAndUpdate(
-    console.log(req.body)
-    // { _id: req.body.user[0]._id },
-    // { $push: { items: { description: req.body.description } } },
-    // { new: true }
+    { _id: req.body.user},
+    { $push: { items: { description: req.body.description } } },
+    { new: true }
   );
   res.status(200).json({
     status: 'ok',

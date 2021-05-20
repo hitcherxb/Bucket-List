@@ -107,14 +107,12 @@ function MyList(props) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         let res = await axios.post(`http://localhost:5000/api/bucketList`, { button, item, user: props.match.params.userid })
-        console.log('FE response', res);
     }
 
     // Grabbing info
 
     useEffect(() => {
         actions.getUser().then(res => setItems(res.data.items))
-
     }, [])
 
 
@@ -127,9 +125,10 @@ function MyList(props) {
 
     const handleSubmitDescription = async (e) => {
         e.preventDefault()
+        console.log(e)
         setDescription(e.target[0].value)
         let res = await axios.post(`http://localhost:5000/api/feed`, { description, user: props.match.params.userid })
-        console.log('FE response', res);
+        // console.log('FE response', res);
     }
 
     //Modal

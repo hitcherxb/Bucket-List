@@ -283,4 +283,7 @@
     width: 45vw;
     height: 20vh;
 }
+.btn-primary{
+    background-color: #5688ff;
+}
 }
