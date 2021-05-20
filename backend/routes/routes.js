@@ -73,14 +73,9 @@ router.post(`/bucketList`, async (req, res) => {
   });
 });
 
-// { $addToSet: { 'comments.$[elem].likes': { user: req.body.userId } } },
-// 		{
-// 			arrayFilters: [{ 'elem._id': req.body.commentId }],
-// 			new: true,
-// 		}
 
 router.post(`/feed`, async (req, res) => {
-  console.log('description', req.body.description)
+  // console.log('description', req.body.description)
   const user = await User.findOneAndUpdate(
     { _id: req.body.user },
     { $set: { 'items.$[elem].description': req.body.description } },
@@ -95,8 +90,8 @@ router.post(`/feed`, async (req, res) => {
   });
 });
 
-router.get("/getUser", (req, res) => User.find().then((response) => res.json(response)))
 
+router.get("/getUser", (req, res) => User.find().then((response) => res.json(response)))
 
 function authorize(req, res, next) {
   // console.log('monkey in the mittle', req.headers);
@@ -105,11 +100,11 @@ function authorize(req, res, next) {
     // console.log(token);
     jwt.verify(token, 'secret key', async (err, data) => {
       if (!err) {
-        console.log(data);
+        // console.log(data);
         res.locals.user = data.user;
         next();
       } else {
-        console.error(err);
+        // console.error(err);
         res.json({ err });
       }
     });

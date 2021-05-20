@@ -2,6 +2,22 @@
     background-image: url("../pictures/feedbg.png");
     width: 100vw;
     height: 100vh;
-    background-size: cover;
-    background-position: absolute;
+
+}
+
+.myFeedPage h4 {
+    display: flex;
+    justify-content: center;
+}
+.myFeedPage h3 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.feedContainer {
+    border: 2px solid black;
+    width: 80vw;
+    height: 70vh;
+    margin-left: 10vw;
+    background: white;
 }

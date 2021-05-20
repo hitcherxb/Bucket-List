@@ -18,18 +18,18 @@ const actions = {
     getUser: async () => {
         return await axios.get(`${serverUrl}/get-user`, createHeaders())
     },
-    getMessages: async () => {
-        let messages = await axios.get(`${serverUrl}/get-messages`)
-        return messages.data
-    },
-    getMyMessages: async () => {
-        let messages = await axios.get(`${serverUrl}/get-my-messages`, createHeaders())
-        console.log(messages)
-        return messages.data
-    },
-    addMessage: async ({ message }) => {
-        return await axios.post(`${serverUrl}/add-message`, { message }, createHeaders())
-    },
+    // getMessages: async () => {
+    //     let messages = await axios.get(`${serverUrl}/get-messages`)
+    //     return messages.data
+    // },
+    // getMyMessages: async () => {
+    //     let messages = await axios.get(`${serverUrl}/get-my-messages`, createHeaders())
+    //     console.log(messages)
+    //     return messages.data
+    // },
+    // addMessage: async ({ message }) => {
+    //     return await axios.post(`${serverUrl}/add-message`, { message }, createHeaders())
+    // },
 
     logIn: async ({ user, pass }) => {
         let res = await axios.post(`${serverUrl}/login`, { user, pass })

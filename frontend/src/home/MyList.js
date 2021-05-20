@@ -188,8 +188,13 @@ function MyList(props) {
         );
     }
 
-
-
+    
+    // const getUserId = () => {
+    //     actions.getUser({}).then(data => {
+    //         props.history.push(`/feed/${data.data._id}`)
+    //         console.log("getuserid", data.data._id)
+    //     })
+    // }
 
 
 
