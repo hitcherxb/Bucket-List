@@ -22,6 +22,8 @@ function MyList(props) {
     const [items, setItems] = useState([])
     const [modalShow, setModalShow] = useState(false);
     const [description, setDescription] = useState('')
+    const [currentUser, setCurrentUser] = useState(null)
+    const [currentList, setCurrentList] = useState(null)
 
     //Grabbing button Choice
 
@@ -66,25 +68,26 @@ function MyList(props) {
 
     // CheckBox
 
-    const checkBox = (e) => {
-        return <Form>
-            {['checkbox'].map((type) => (
-                <div key={type} className="mb-3">
-                    <Form.Check type={type} id={`check-api-${type}`}>
-                        <Form.Check.Input onClick={() => {
-                            setModalShow(true)
-                            console.log('test')
-                        }} type={type} isValid />
+    const checkBox = () => {
+        if (currentUser) {
+            return <Form>
+                {currentUser.items.map((e, i) => {
+                    console.log(i, e)
+                    return (
+                        < div key={e._id} className="mb-3" >
+                        </div>
+                    )
+                })
+                }
+            </Form >
+        }
 
-                    </Form.Check>
-                </div>
-            ))}
-        </Form>
     }
 
     //Display bucketlist items
 
     const displayItems = (e) => {
+        console.log(items)
         return items.map(thing => {
             return (
                 <div className="bucketLine">
@@ -95,7 +98,16 @@ function MyList(props) {
                         {thing.item}
                     </div>
                     <div className="bucketCheckBox">
-                        {checkBox()}
+                        < div key={thing._id} className="mb-3" >
+                            <Form.Check
+                                type='checkbox'
+                                onClick={() => {
+                                    setModalShow(true)
+                                    setCurrentList(thing._id)
+                                    console.log('test')
+                                }}
+                            />
+                        </div>
                     </div>
                 </div>
             )
@@ -108,14 +120,19 @@ function MyList(props) {
         e.preventDefault()
         let res = await axios.post(`http://localhost:5000/api/bucketList`, { button, item, user: props.match.params.userid })
         console.log('FE response', res);
+        setCurrentUser(res.data.user)
     }
+
 
     // Grabbing info
 
     useEffect(() => {
-        actions.getUser().then(res => setItems(res.data.items))
+        actions.getUser().then(res => {
+            console.log(res)
+            setItems(res.data.items)
+        })
 
-    }, [])
+    }, [currentUser])
 
 
 
@@ -127,8 +144,8 @@ function MyList(props) {
 
     const handleSubmitDescription = async (e) => {
         e.preventDefault()
-        setDescription(e.target[0].value)
-        let res = await axios.post(`http://localhost:5000/api/feed`, { description, user: props.match.params.userid })
+        await setDescription(e.target[0].value)
+        let res = await axios.post(`http://localhost:5000/api/feed`, { description: e.target[0].value, user: props.match.params.userid, currentList })
         console.log('FE response', res);
     }
 

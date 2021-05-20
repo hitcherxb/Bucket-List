@@ -56,7 +56,7 @@ router.post(`/signUp`, async (req, res) => {
   }
 
   //No matter what i have a user and now I can create the jwt token
-  jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
+  jwt.sign({ user }, 'secret key', (err, token) => {
     res.json({ user, token });
   });
 });
@@ -73,12 +73,21 @@ router.post(`/bucketList`, async (req, res) => {
   });
 });
 
+// { $addToSet: { 'comments.$[elem].likes': { user: req.body.userId } } },
+// 		{
+// 			arrayFilters: [{ 'elem._id': req.body.commentId }],
+// 			new: true,
+// 		}
+
 router.post(`/feed`, async (req, res) => {
+  console.log('description', req.body.description)
   const user = await User.findOneAndUpdate(
-    console.log(req.body)
-    // { _id: req.body.user[0]._id },
-    // { $push: { items: { description: req.body.description } } },
-    // { new: true }
+    { _id: req.body.user },
+    { $set: { 'items.$[elem].description': req.body.description } },
+    {
+      arrayFilters: [{ 'elem._id': req.body.currentList }],
+      new: true
+    }
   );
   res.status(200).json({
     status: 'ok',
