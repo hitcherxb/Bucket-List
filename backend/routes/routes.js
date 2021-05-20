@@ -75,9 +75,10 @@ router.post(`/bucketList`, async (req, res) => {
 
 router.post(`/feed`, async (req, res) => {
   const user = await User.findOneAndUpdate(
-    { _id: req.body.user },
-    { $push: { description: req.body.description } },
-    { new: true }
+    console.log(req.body)
+    // { _id: req.body.user[0]._id },
+    // { $push: { items: { description: req.body.description } } },
+    // { new: true }
   );
   res.status(200).json({
     status: 'ok',
@@ -89,10 +90,10 @@ router.get("/getUser", (req, res) => User.find().then((response) => res.json(res
 
 
 function authorize(req, res, next) {
-  console.log('monkey in the mittle', req.headers);
+  // console.log('monkey in the mittle', req.headers);
   if (req.headers.authorization) {
     let token = req.headers.authorization.split(' ')[1];
-    console.log(token);
+    // console.log(token);
     jwt.verify(token, 'secret key', async (err, data) => {
       if (!err) {
         console.log(data);

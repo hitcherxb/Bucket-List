@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 const itemSchema = new Schema({
   button: String,
   item: String,
+  description: String,
 });
 
 const userSchema = new Schema({
@@ -11,7 +12,7 @@ const userSchema = new Schema({
   user: String,
   pass: String,
   items: [itemSchema],
-  description: String,
+
 });
 
 const User = model('User', userSchema);
