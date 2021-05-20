@@ -297,7 +297,7 @@
     display: flex;
     height: 8vh;
     width: 50vw;
-    border: solid 1px #5688ff;
+    box-shadow: 2px 2px #5688ff;
     border-radius: 16px;
     margin-left: 5vw;
     margin-top: .5rem;

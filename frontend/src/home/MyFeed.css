@@ -2,7 +2,8 @@
     background-image: url("../pictures/feedbg.png");
     width: 100vw;
     height: 100vh;
-
+    background-repeat: repeat;
+    overflow-y: scroll
 }
 
 .myFeedPage h4 {
@@ -15,11 +16,15 @@
 }
 
 .feedContainer {
-    border: 2px solid black;
-    width: 80vw;
+    /* border: 2px solid black; */
+    width: 100vw;
     height: 70vh;
-    margin-left: 10vw;
-    background: white;
+    /* margin-left: 10vw; */
+    /* background: white; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 1%;
 }
 
 .myFeedHeader{
@@ -43,8 +48,20 @@
 .feedSection{
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-start; */
+    /* justify-content: space-around; */
     align-items: flex-start;
+    box-shadow: 2px 2px 2px 2px grey;
+    width: 34vw;
+    height:50vh;
+    background-color: white;
+    margin: 3%;
+    overflow: hidden;
+    border-radius: 15px;
+    
+    
+}
+.feedWords{
+    margin-left: 15px;
 }
 .feedTitle{
     font-size: 2rem;
@@ -53,4 +70,10 @@
 }
 .feedDescription{
 font-size: 1.5rem;
+}
+.feedImage img{
+    
+   border-radius: 15px;
+    height: 100%;
+    width: 100%;
 }
