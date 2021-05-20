@@ -131,8 +131,34 @@
     margin-top: 1vh;
 }
 
+.modal-body input {
+    width: 45vw;
+    height: 40vh;
+}
+.modalForm {
+    background-color: gainsboro;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h4{
+    color: #5688ff;
+    font: bolder;
+}
+.modal form{
+    
+    height: 40vh;
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem
+}
 
-
+.modal-header{
+    background-color:gainsboro;
+    font: whitesmoke;
+}
 
 
 
