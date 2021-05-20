@@ -22,6 +22,8 @@ function MyList(props) {
     const [items, setItems] = useState([])
     const [modalShow, setModalShow] = useState(false);
     const [description, setDescription] = useState('')
+    const [currentUser, setCurrentUser] = useState(null)
+    const [currentList, setCurrentList] = useState(null)
 
     //Grabbing button Choice
 
@@ -66,25 +68,26 @@ function MyList(props) {
 
     // CheckBox
 
-    const checkBox = (e) => {
-        return <Form>
-            {['checkbox'].map((type) => (
-                <div key={type} className="mb-3">
-                    <Form.Check type={type} id={`check-api-${type}`}>
-                        <Form.Check.Input onClick={() => {
-                            setModalShow(true)
-                            console.log('test')
-                        }} type={type} isValid />
+    const checkBox = () => {
+        if (currentUser) {
+            return <Form>
+                {currentUser.items.map((e, i) => {
+                    console.log(i, e)
+                    return (
+                        < div key={e._id} className="mb-3" >
+                        </div>
+                    )
+                })
+                }
+            </Form >
+        }
 
-                    </Form.Check>
-                </div>
-            ))}
-        </Form>
     }
 
     //Display bucketlist items
 
     const displayItems = (e) => {
+        console.log(items)
         return items.map(thing => {
             return (
                 <div className="bucketLine">
@@ -95,7 +98,16 @@ function MyList(props) {
                         {thing.item}
                     </div>
                     <div className="bucketCheckBox">
-                        {checkBox()}
+                        < div key={thing._id} className="mb-3" >
+                            <Form.Check
+                                type='checkbox'
+                                onClick={() => {
+                                    setModalShow(true)
+                                    setCurrentList(thing._id)
+                                    console.log('test')
+                                }}
+                            />
+                        </div>
                     </div>
                 </div>
             )
@@ -107,13 +119,20 @@ function MyList(props) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         let res = await axios.post(`http://localhost:5000/api/bucketList`, { button, item, user: props.match.params.userid })
+        console.log('FE response', res);
+        setCurrentUser(res.data.user)
     }
+
 
     // Grabbing info
 
     useEffect(() => {
-        actions.getUser().then(res => setItems(res.data.items))
-    }, [])
+        actions.getUser().then(res => {
+            console.log(res)
+            setItems(res.data.items)
+        })
+
+    }, [currentUser])
 
 
 
@@ -125,40 +144,47 @@ function MyList(props) {
 
     const handleSubmitDescription = async (e) => {
         e.preventDefault()
-        console.log(e)
-        setDescription(e.target[0].value)
-        let res = await axios.post(`http://localhost:5000/api/feed`, { description, user: props.match.params.userid })
-        // console.log('FE response', res);
+        await setDescription(e.target[0].value)
+        let res = await axios.post(`http://localhost:5000/api/feed`, { description: e.target[0].value, user: props.match.params.userid, currentList })
+        console.log('FE response', res);
     }
 
     //Modal
 
     function MyVerticallyCenteredModal(props) {
         return (
-            <Modal
-                show={modalShow}
-                onHide={handleModalClose}
-                {...props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-vcenter">
-                        You Did It!
+            <div className="ModalWhole">
+                <Modal
+                    show={modalShow}
+                    onHide={handleModalClose}
+                    {...props}
+                    size="lg"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                >
+
+                    <Modal.Header closeButton>
+                        <Modal.Title id="contained-modal-title-vcenter">
+                            Congrats! You Did It!
               </Modal.Title>
-                </Modal.Header>
-                <form onSubmit={handleSubmitDescription}>
+                    </Modal.Header>
+                    <div className="modalForm">
+                        <form onSubmit={handleSubmitDescription}>
 
-                    <h4>Add a Description</h4>
-                    <input type="text">
+                            <h4>Blog about your experience</h4>
+                            <div className="modalText">
+                                <input type="text">
 
-                    </input>
+                                </input>
+                            </div>
 
-                    <button type='submit'>Add to Feed</button>
+                            <button type='submit'>Add to Feed</button>
 
-                </form>
-            </Modal>
+                        </form>
+                    </div>
+
+                </Modal>
+            </div>
         );
     }
 

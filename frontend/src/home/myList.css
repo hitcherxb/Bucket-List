@@ -281,9 +281,29 @@
 }
 .modal-body input {
     width: 45vw;
-    height: 20vh;
+    height: 40vh;
 }
-.btn-primary{
-    background-color: #5688ff;
+.modalForm {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.h4{
+    color: #5688ff;
+    font: bolder;
+}
+.modal form{
+    color: #5688ff;
+    height: 40vh;
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem
+}
+
+/* .ModalWhole{
+    border-radius: 20%;
+} */
+
 }
