@@ -210,7 +210,7 @@ function MyList(props) {
             <div className="bucketlistContainer">
                 <div className="mybucketlistHeader">
 
-                    {/* Logo */}
+
 
                     <h3 className="bucketHeader">My Bucket List</h3>
                     <hr className='hrtag' />
