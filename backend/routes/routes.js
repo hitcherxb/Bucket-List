@@ -56,7 +56,7 @@ router.post(`/signUp`, async (req, res) => {
   }
 
   //No matter what i have a user and now I can create the jwt token
-  jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
+  jwt.sign({ user }, 'secret key', (err, token) => {
     res.json({ user, token });
   });
 });
@@ -73,11 +73,21 @@ router.post(`/bucketList`, async (req, res) => {
   });
 });
 
+// { $addToSet: { 'comments.$[elem].likes': { user: req.body.userId } } },
+// 		{
+// 			arrayFilters: [{ 'elem._id': req.body.commentId }],
+// 			new: true,
+// 		}
+
 router.post(`/feed`, async (req, res) => {
+  console.log('description', req.body.description)
   const user = await User.findOneAndUpdate(
     { _id: req.body.user },
-    { $push: { description: req.body.description } },
-    { new: true }
+    { $set: { 'items.$[elem].description': req.body.description } },
+    {
+      arrayFilters: [{ 'elem._id': req.body.currentList }],
+      new: true
+    }
   );
   res.status(200).json({
     status: 'ok',
@@ -89,10 +99,10 @@ router.get("/getUser", (req, res) => User.find().then((response) => res.json(res
 
 
 function authorize(req, res, next) {
-  console.log('monkey in the mittle', req.headers);
+  // console.log('monkey in the mittle', req.headers);
   if (req.headers.authorization) {
     let token = req.headers.authorization.split(' ')[1];
-    console.log(token);
+    // console.log(token);
     jwt.verify(token, 'secret key', async (err, data) => {
       if (!err) {
         console.log(data);
