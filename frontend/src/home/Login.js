@@ -16,12 +16,12 @@ function Login(props) {
         e.preventDefault()
         actions.logIn({ user, pass }).then(data => {
             console.log(data)
-            if(data.user){
-            setUser(data.user)
-            props.history.push(`/bucketlist/${data.user._id}`)
-        } else {
-            setError(data.error)
-        }
+            if (data.user) {
+                setUser(data.user)
+                props.history.push(`/bucketlist/${data.user._id}`)
+            } else {
+                setError(data.error)
+            }
         })
     }
 
@@ -38,7 +38,7 @@ function Login(props) {
                 <p>Login to your bucketlist!</p>
                 <form onSubmit={submitLogin}>
                     <input onChange={((e) => setUsername(e.target.value))} type='text' placeholder='Username' />
-                    <input onChange={((e) => setPassword(e.target.value))} type='text' placeholder='Password' />
+                    <input onChange={((e) => setPassword(e.target.value))} type='password' placeholder='Password' />
                     <button>Login</button>
                     {error}
                     <Link to='/signup'><p>No account? Sign up here</p></Link>
