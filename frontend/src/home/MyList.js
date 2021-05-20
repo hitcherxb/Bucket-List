@@ -165,13 +165,13 @@ function MyList(props) {
 
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-vcenter">
-                            Congrats! You Did It!
+                            Congrats!
               </Modal.Title>
                     </Modal.Header>
                     <div className="modalForm">
                         <form onSubmit={handleSubmitDescription}>
 
-                            <h4>Blog about your experience</h4>
+                            <h4>Blog about your experience!</h4>
                             <div className="modalText">
                                 <input type="text">
 
