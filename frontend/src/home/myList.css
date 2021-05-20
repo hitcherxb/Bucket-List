@@ -318,9 +318,11 @@
 .h4{
     color: #5688ff;
     font: bolder;
+    
 }
 .modal form{
     color: #5688ff;
+    text-decoration: underline;
     height: 40vh;
     width: 60vw;
     display: flex;
@@ -328,8 +330,12 @@
     padding-bottom: 1rem
 }
 
-.ModalWhole{
+#ModalWhole{
     border-radius: 20%;
 }
-
+.modalButton {
+    background-color: #5688ff;
+    height: 4vh;
+    width: 8vw
+}
 }

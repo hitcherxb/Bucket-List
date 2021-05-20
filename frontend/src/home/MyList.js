@@ -153,7 +153,7 @@ function MyList(props) {
 
     function MyVerticallyCenteredModal(props) {
         return (
-            <div className="ModalWhole">
+            <div id="ModalWhole">
                 <Modal
                     show={modalShow}
                     onHide={handleModalClose}
@@ -178,7 +178,7 @@ function MyList(props) {
                                 </input>
                             </div>
 
-                            <button type='submit'>Add to Feed</button>
+                            <button className="modalButton" type='submit'>Add to Feed</button>
 
                         </form>
                     </div>
