@@ -7,6 +7,7 @@ import Home from './home/Home'
 import Login from './home/Login'
 import Signup from './home/Signup'
 import MyList from './home/MyList';
+import MyFeed from './home/MyFeed';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/bucketlist/:userid' component={MyList} />
+          <Route exact path='/feed' component={MyFeed}/>
 
 
         </Switch>

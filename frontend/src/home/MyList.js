@@ -199,6 +199,7 @@ function MyList(props) {
         <div className="bucketListPage">
 
             <h1 className="bucketListHeader">BucketList</h1>
+            <Link to="/feed"><h2>My Feed</h2></Link>
 
             <div className="bucketlistContainer">
                 <div className="mybucketlistHeader">
