@@ -136,30 +136,38 @@ function MyList(props) {
 
     function MyVerticallyCenteredModal(props) {
         return (
-            <Modal
-                show={modalShow}
-                onHide={handleModalClose}
-                {...props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-vcenter">
-                        You Did It!
+            <div className="ModalWhole">
+                <Modal
+                    show={modalShow}
+                    onHide={handleModalClose}
+                    {...props}
+                    size="lg"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                >
+
+                    <Modal.Header closeButton>
+                        <Modal.Title id="contained-modal-title-vcenter">
+                            Congrats! You Did It!
               </Modal.Title>
-                </Modal.Header>
-                <form onSubmit={handleSubmitDescription}>
+                    </Modal.Header>
+                    <div className="modalForm">
+                        <form onSubmit={handleSubmitDescription}>
 
-                    <h4>Add a Description</h4>
-                    <input type="text">
+                            <h4>Blog about your experience</h4>
+                            <div className="modalText">
+                                <input type="text">
 
-                    </input>
+                                </input>
+                            </div>
 
-                    <button type='submit'>Add to Feed</button>
+                            <button type='submit'>Add to Feed</button>
 
-                </form>
-            </Modal>
+                        </form>
+                    </div>
+
+                </Modal>
+            </div>
         );
     }
 
