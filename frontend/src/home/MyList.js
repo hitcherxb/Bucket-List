@@ -188,7 +188,7 @@ function MyList(props) {
         );
     }
 
-    
+
     // const getUserId = () => {
     //     actions.getUser({}).then(data => {
     //         props.history.push(`/feed/${data.data._id}`)
@@ -202,9 +202,10 @@ function MyList(props) {
 
     return (
         <div className="bucketListPage">
-
-            <h1 className="bucketListHeader">BucketList</h1>
-            <Link to="/feed"><h2>My Feed</h2></Link>
+            <div className="bucketListHeader">
+                <h1 >BucketList</h1>
+                <Link to="/feed"><h2>My Feed</h2></Link>
+            </div>
 
             <div className="bucketlistContainer">
                 <div className="mybucketlistHeader">

@@ -136,7 +136,7 @@
     height: 40vh;
 }
 .modalForm {
-    background-color: gainsboro;
+    background-color: whitesmoke;
     height: 40vh;
     display: flex;
     justify-content: center;
@@ -156,8 +156,8 @@
 }
 
 .modal-header{
-    background-color:gainsboro;
-    font: whitesmoke;
+    background-color:whitesmoke;
+    font: black;
 }
 
 
@@ -184,9 +184,22 @@
 .bucketListHeader{
     color: #5688ff;
     font-weight: bold;
-    font-size: 3rem;
+    /* font-size: 3rem; */
     margin-left: 1%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1.5%;
+
 }
+.bucketListHeader h2{
+    font-size: 1.7rem;
+    margin-top: 5%;
+    color:#5688ff
+}
+.bucketListHeader h1{
+    font-size: 3.2rem;
+}
+
 
 .bucketHeader{
     display: flex;
@@ -322,7 +335,7 @@
 }
 .modal form{
     color: #5688ff;
-    text-decoration: underline;
+  
     height: 40vh;
     width: 60vw;
     display: flex;
@@ -331,7 +344,7 @@
 }
 
 #ModalWhole{
-    border-radius: 20%;
+    border-radius: 30%;
 }
 .modalButton {
     background-color: #5688ff;

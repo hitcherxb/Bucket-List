@@ -21,3 +21,17 @@
     margin-left: 10vw;
     background: white;
 }
+
+.myFeedHeader{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 3%;
+}
+.myFeedHeader h3{
+    margin-top: 7%;
+}
+
+.myFeedPage h4{
+    font-size: 3em;
+    margin-top: 4%;
+}
