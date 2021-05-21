@@ -146,21 +146,22 @@ function MyList(props) {
 
     const handleSubmitDescription = async (e) => {
         e.preventDefault()
+        setModalShow(false)
         setDescription(e.target[0].value)
         console.log(e.target[0].value)
         let res = await actions.postFeed({ description: e.target[0].value, user: props.match.params.userid, currentList }).then((res) => console.log(res))
         console.log(res)
     }
 
-    const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
 
-    const onLoginFormSubmit = (e) => {
-        e.preventDefault();
-        handleClose();
-    };
+    // const onLoginFormSubmit = (e) => {
+    //     e.preventDefault();
+    //     handleClose();
+    // };
 
 
 
@@ -193,7 +194,7 @@ function MyList(props) {
                                 </textarea>
                             </div>
 
-                            <button onClick={handleClose} className="modalButton" type='submit'>Add to Feed</button>
+                            <button className="modalButton" type='submit'>Add to Feed</button>
 
                         </form>
                     </div>
