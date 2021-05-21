@@ -69,7 +69,7 @@ function MyFeed(props) {
     return (
         <div className="myFeedPage">
             <div className="myFeedHeader">
-                <h1>BucketList</h1>
+                <Link to={`/bucketlist/${user}`}><h1>BucketList</h1></Link>
                 <Link to={`/bucketlist/${user}`}><h3>My List</h3></Link>
             </div>
             <h4>My Feed</h4>
