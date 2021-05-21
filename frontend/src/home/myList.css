@@ -8,10 +8,18 @@
 }
 
 .bucketListHeader{
+        color: #5688ff;
+        font-weight: bolder;
+        /* font-size: 3rem; */
+        margin-left: 1%;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 1.5%;
+    
+    }
+.bucketListHeader h2{
     color: #5688ff;
-    font-weight: bold;
-    font-size: 2rem;
-    margin-left: 1%;
+    font-size: 1.6em;
 }
 
 .bucketHeader{
