@@ -1,81 +1,169 @@
-.myFeedPage {
-    background-image: url("../pictures/feedbg.png");
-    width: 100vw;
-    height: 100vh;
-    background-repeat: repeat;
-    overflow-y: scroll
-}
-
-.myFeedPage h4 {
-    display: flex;
-    justify-content: center;
-}
-.myFeedPage h3 {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.feedContainer {
-    width: 100vw;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.myFeedHeader{
-    display: flex;
-    justify-content: space-between;
-    margin-right: 3%;
-}
-.myFeedHeader h1{
-    color: #5688ff;
-    font-size: 3rem;
-}
-.myFeedHeader h3{
-    margin-top: 7%;
-}
-
-.myFeedPage h4{
-    font-size: 3em;
-    margin-top: 4%;
-}
-
-.feedSection{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 2px 2px 2px 2px grey;
-    width: 34vw;
-    height:55vh;
-    background-color: white;
-    margin: 3%;
-    overflow: hidden;
-    border-radius: 15px;
+@media(max-width: 650px) {
+    .myFeedPage {
+        background-image: url("../pictures/feedbg.png");
+        width: 100vw;
+        height: 100vh;
+        background-repeat: repeat;
+        overflow-y: scroll
+    }
     
+    .myFeedPage h4 {
+        display: flex;
+        justify-content: center;
+    }
+    .myFeedPage h3 {
+        display: flex;
+        justify-content: flex-end;
+    }
     
+    .feedContainer {
+        width: 100vw;
+        height: 200vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+        /* flex-wrap: wrap; */
+    }
+    
+    .myFeedHeader{
+        display: flex;
+        justify-content: space-between;
+        margin-right: 3%;
+    }
+    .myFeedHeader h1{
+        color: #5688ff;
+        font-size: 2rem;
+    }
+    .myFeedHeader h3{
+        margin-top: 7%;
+        font-size: 1.3rem;
+    }
+    
+    .myFeedPage h4{
+        font-size: 2.5rem;
+        margin-top: 4%;
+    }
+    
+    .feedSection{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 2px 2px 2px 2px grey;
+        width: 75vw;
+        height:60vh;
+        background-color: white;
+        margin: 3%;
+        overflow: hidden;
+        border-radius: 15px; 
+    }
+    .feedWords{
+        margin-left: 15px;
+        overflow-y: scroll;
+        -ms-overflow-style: none; 
+        scrollbar-width: none;
+    }
+    .feedWords::-webkit-scrollbar { 
+        display: none;  
+    }
+    .feedTitle{
+        font-size: 1.2rem;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    .feedImage img{
+        border-radius: 15px 15px 0 0;
+        width: 100%;
+    }
+    .hrtag {
+       width: 15vw; 
+    }
 }
-.feedWords{
-    margin-left: 15px;
-    overflow-y: scroll;
-    -ms-overflow-style: none; 
-    scrollbar-width: none;
+
+@media(min-width: 650px) {
+    .myFeedPage {
+        background-image: url("../pictures/feedbg.png");
+        width: 100vw;
+        height: 100vh;
+        background-repeat: repeat;
+        overflow-y: scroll
+    }
+    
+    .myFeedPage h4 {
+        display: flex;
+        justify-content: center;
+    }
+    .myFeedPage h3 {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .feedContainer {
+        width: 100vw;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .myFeedHeader{
+        display: flex;
+        justify-content: space-between;
+        margin-right: 3%;
+    }
+    .myFeedHeader h1{
+        color: #5688ff;
+        font-size: 3rem;
+    }
+    .myFeedHeader h3{
+        margin-top: 7%;
+    }
+    
+    .myFeedPage h4{
+        font-size: 3em;
+        margin-top: 4%;
+    }
+    
+    .feedSection{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 2px 2px 2px 2px grey;
+        width: 34vw;
+        height:55vh;
+        background-color: white;
+        margin: 3%;
+        overflow: hidden;
+        border-radius: 15px;
+        
+        
+    }
+    .feedWords{
+        margin-left: 15px;
+        overflow-y: scroll;
+        -ms-overflow-style: none; 
+        scrollbar-width: none;
+    }
+    .feedWords::-webkit-scrollbar { 
+        display: none;  
+    }
+    .feedTitle{
+        font-size: 2rem;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    .feedDescription{
+    font-size: 1.4rem;
+    }
+    .feedImage img{
+        border-radius: 15px 15px 0 0;
+        width: 100%;
+    }
+    .hrtag {
+       width: 10vw; 
+    }
 }
-.feedWords::-webkit-scrollbar { 
-    display: none;  
-}
-.feedTitle{
-    font-size: 2rem;
-    text-decoration: underline;
-    font-weight: bold;
-}
-.feedDescription{
-font-size: 1.4rem;
-}
-.feedImage img{
-    border-radius: 15px 15px 0 0;
-    width: 100%;
-}
-.hrtag {
-   width: 10vw; 
-}
+
+
+
+
