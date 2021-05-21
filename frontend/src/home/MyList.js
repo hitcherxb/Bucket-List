@@ -152,6 +152,18 @@ function MyList(props) {
         console.log(res)
     }
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const onLoginFormSubmit = (e) => {
+        e.preventDefault();
+        handleClose();
+    };
+
+
+
     //Modal
 
     function MyVerticallyCenteredModal(props) {
@@ -168,20 +180,20 @@ function MyList(props) {
 
                     <Modal.Header closeButton>
                         <Modal.Title>
-                            Congrats! 
+                            Congrats!
               </Modal.Title>
                     </Modal.Header>
                     <div className="modalForm">
-                        <form onSubmit={handleSubmitDescription}>
+                        <form onSubmit={handleSubmitDescription} >
 
                             <h4>Blog about your experience!</h4>
                             <div className="modalText">
-                                <input type="textarea">
+                                <textarea name="message" rows="10" cols="80">
 
-                                </input>
+                                </textarea>
                             </div>
 
-                            <button className="modalButton" type='submit'>Add to Feed</button>
+                            <button onClick={handleClose} className="modalButton" type='submit'>Add to Feed</button>
 
                         </form>
                     </div>
