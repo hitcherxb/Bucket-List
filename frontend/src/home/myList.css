@@ -118,13 +118,21 @@
     width: 15%;
     display: flex;
     justify-content: center;
+    
 }
 .bucketCheckBox Form{
     display: flex;
     justify-content: center;
     align-items: center;
+    
    
 }
+
+.form-check-input{
+    height: 7vh;
+    width: 1.5vw
+}
+
 .bucketContainer{
     overflow-y: scroll;
     max-height: 45vh;
