@@ -153,7 +153,7 @@ function MyList(props) {
 
     function MyVerticallyCenteredModal(props) {
         return (
-            <div id="ModalWhole">
+            <div id="modalContainer">
                 <Modal
                     show={modalShow}
                     onHide={handleModalClose}
@@ -164,8 +164,8 @@ function MyList(props) {
                 >
 
                     <Modal.Header closeButton>
-                        <Modal.Title id="contained-modal-title-vcenter">
-                            Congrats!
+                        <Modal.Title>
+                            Congrats! 
               </Modal.Title>
                     </Modal.Header>
                     <div className="modalForm">
@@ -173,7 +173,7 @@ function MyList(props) {
 
                             <h4>Blog about your experience!</h4>
                             <div className="modalText">
-                                <input type="text">
+                                <input type="textarea">
 
                                 </input>
                             </div>
