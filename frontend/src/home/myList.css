@@ -129,8 +129,8 @@
 }
 
 .form-check-input{
-    height: 7vh;
-    width: 1.5vw
+    height: 8vh;
+    width: 2.5vw
 }
 
 .bucketContainer{
@@ -358,5 +358,9 @@
     background-color: #5688ff;
     height: 4vh;
     width: 8vw
+}
+.form-check-input{
+    height: 7vh;
+    width: 1.5vw
 }
 }
