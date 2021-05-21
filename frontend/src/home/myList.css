@@ -158,7 +158,7 @@
     justify-content: center;
     align-items: center;
 }
-.h4{
+.modalForm h4{
     color: #5688ff;
     font: bolder;
 }
@@ -173,10 +173,15 @@
 
 .modal-header{
     background-color:whitesmoke;
-    font: black;
+    font: #5688ff;
+}
+.modalButton{
+    background-color: #5688ff;
 }
 
-
+#contained-modal-title-vcenter{
+    color:#5688ff
+}
 
 
 
