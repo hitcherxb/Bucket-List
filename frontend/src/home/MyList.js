@@ -206,7 +206,7 @@ function MyList(props) {
     return (
         <div className="bucketListPage">
             <div className="bucketListHeader">
-                <h1 >BucketList</h1>
+                <Link to={`/`}><h1>BucketList</h1></Link>
                 <Link to="/feed"><h2>My Feed</h2></Link>
             </div>
 

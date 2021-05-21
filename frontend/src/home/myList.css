@@ -8,10 +8,18 @@
 }
 
 .bucketListHeader{
+        color: #5688ff;
+        font-weight: bolder;
+        /* font-size: 3rem; */
+        margin-left: 1%;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 1.5%;
+    
+    }
+.bucketListHeader h2{
     color: #5688ff;
-    font-weight: bold;
-    font-size: 2rem;
-    margin-left: 1%;
+    font-size: 1.6em;
 }
 
 .bucketHeader{
@@ -118,13 +126,21 @@
     width: 15%;
     display: flex;
     justify-content: center;
+    
 }
 .bucketCheckBox Form{
     display: flex;
     justify-content: center;
     align-items: center;
+    
    
 }
+
+.form-check-input{
+    height: 8vh;
+    width: 2.5vw
+}
+
 .bucketContainer{
     overflow-y: scroll;
     max-height: 45vh;
@@ -142,7 +158,7 @@
     justify-content: center;
     align-items: center;
 }
-.h4{
+.modalForm h4{
     color: #5688ff;
     font: bolder;
 }
@@ -157,10 +173,15 @@
 
 .modal-header{
     background-color:whitesmoke;
-    font: black;
+    font: #5688ff;
+}
+.modalButton{
+    background-color: #5688ff;
 }
 
-
+#contained-modal-title-vcenter{
+    color:#5688ff
+}
 
 
 
@@ -349,6 +370,10 @@
 .modalButton {
     background-color: #5688ff;
     height: 4vh;
-    width: 8vw
+    width: 12vw
+}
+.form-check-input{
+    height: 7vh;
+    width: 1.5vw
 }
 }

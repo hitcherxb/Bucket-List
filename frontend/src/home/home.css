@@ -15,7 +15,7 @@
   /* Log in Button */
   .loginButton{
   background-color: #5688ff;
-  height: 11vw;
+  height: 5.5vw;
   width: 150px;
   border-radius: 15px;
   font: bold;
@@ -55,7 +55,9 @@
   .homeHeader{
   display: flex;
   justify-content: flex-start;
-  color: Whitesmoke;
+  color: whitesmoke;
+  font-weight: bold;
+  text-shadow: 1px 1px  black;
   font-size: 8vw;
   margin-left: 1%;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
