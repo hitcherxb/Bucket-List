@@ -23,8 +23,10 @@ function MyFeed(props) {
         })
     }, [])
 
+
     function displayFeed() {
         return info.map((e) => {
+            if (e.hasOwnProperty('description')) {
             return (
                 <div className="feedSection">
                     <div className="feedImage">{logo(e)}</div>
@@ -34,10 +36,11 @@ function MyFeed(props) {
                     </div>
                 </div >
 
-            )
+            )}
         }
         )
     }
+
 
     const logo = (thing) => {
         switch (true) {
