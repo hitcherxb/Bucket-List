@@ -52,7 +52,7 @@
     align-items: flex-start;
     box-shadow: 2px 2px 2px 2px grey;
     width: 34vw;
-    height:50vh;
+    height:55vh;
     background-color: white;
     margin: 3%;
     overflow: hidden;
@@ -69,7 +69,8 @@
     font-weight: bold;
 }
 .feedDescription{
-font-size: 1.5rem;
+font-size: 1.4rem;
+
 }
 .feedImage img{
     
