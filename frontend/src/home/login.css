@@ -18,15 +18,15 @@
 .box{
     background-color: white;
     height: 50vh;
-    width: 80vw;
-    left: 10%;
-    top: 27%;
+    width: 40vw;
+    left: 32%;
+    top: 30%;
     border-radius: 16px;
-    position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    position: absolute; 
+    align-items: center;
 }
 
 .box h1{
@@ -55,10 +55,7 @@
     outline: 0;
     border-width: 0 0 1px;
     border-color: #9E9B9B;
-    width: 45vw;
-    height: 5vh;
-    padding-top: 2vw;
-    margin: 1vw;
+    width: 20vw;
 }
 
 form{
