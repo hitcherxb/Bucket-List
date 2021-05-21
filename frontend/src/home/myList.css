@@ -205,7 +205,6 @@
 .bucketListHeader{
     color: #5688ff;
     font-weight: bold;
-    /* font-size: 3rem; */
     margin-left: 1%;
     display: flex;
     justify-content: space-between;
@@ -225,7 +224,6 @@
 .bucketHeader{
     display: flex;
     justify-content: center;
-    /* margin-top: 8vh; */
     align-items: flex-start;
     font-size: 3rem;
     font-weight: 800;
@@ -285,11 +283,11 @@
     margin: 0;
 }
 
- .hrtag{
+.hrtag{
     border: 3px solid #5688ff;
     border-radius: 5px;
     width: 15vw;
- }
+}
 
 .bucketPic img{
     width: 80%;
@@ -339,10 +337,7 @@
     overflow-y: scroll;
     max-height: 45vh;
 }
-.modal-body input {
-    width: 45vw;
-    height: 40vh;
-}
+
 .modalForm {
     height: 40vh;
     display: flex;
@@ -356,7 +351,6 @@
 }
 .modal form{
     color: #5688ff;
-  
     height: 40vh;
     width: 60vw;
     display: flex;
@@ -364,16 +358,23 @@
     padding-bottom: 1rem
 }
 
-#ModalWhole{
-    border-radius: 30%;
-}
 .modalButton {
     background-color: #5688ff;
     height: 4vh;
-    width: 12vw
+    width: 10vw;
+    border-radius: 5px;
+    border: none;
+    color: white;
 }
 .form-check-input{
     height: 7vh;
     width: 1.5vw
 }
+.modalText input {
+    height: 20vh;
+    width: 40vw;
+    border-radius: 5px;
+    border: 1px solid #C4C4C4;
+}
+
 }
