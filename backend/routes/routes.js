@@ -39,7 +39,7 @@ router.post(`/login`, async (req, res) => {
   }
 
   //No matter what i have a user and now I can create the jwt token
-  jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
+  jwt.sign({ user }, 'secret key', (err, token) => {
     res.json({ user, token });
   });
 });
@@ -84,6 +84,7 @@ router.post(`/feed`, async (req, res) => {
       new: true
     }
   );
+  console.log(user, req.body, 'coffee')
   res.status(200).json({
     status: 'ok',
     user,

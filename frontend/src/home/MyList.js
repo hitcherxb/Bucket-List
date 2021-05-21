@@ -16,6 +16,7 @@ import Button from 'react-bootstrap/Button'
 
 
 
+
 function MyList(props) {
     const [button, setButton] = useState('Choose Category')
     const [item, setItem] = useState('')
@@ -24,6 +25,7 @@ function MyList(props) {
     const [description, setDescription] = useState('')
     const [currentUser, setCurrentUser] = useState(null)
     const [currentList, setCurrentList] = useState(null)
+
 
     //Grabbing button Choice
 
@@ -118,7 +120,7 @@ function MyList(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        let res = await axios.post(`http://localhost:5000/api/bucketList`, { button, item, user: props.match.params.userid })
+        let res = await actions.postBucketList({ button, item, user: props.match.params.userid })
         console.log('FE response', res);
         setCurrentUser(res.data.user)
     }
@@ -144,9 +146,10 @@ function MyList(props) {
 
     const handleSubmitDescription = async (e) => {
         e.preventDefault()
-        await setDescription(e.target[0].value)
-        let res = await axios.post(`http://localhost:5000/api/feed`, { description: e.target[0].value, user: props.match.params.userid, currentList })
-        console.log('FE response', res);
+        setDescription(e.target[0].value)
+        console.log(e.target[0].value)
+        let res = await actions.postFeed({ description: e.target[0].value, user: props.match.params.userid, currentList }).then((res) => console.log(res))
+        console.log(res)
     }
 
     //Modal

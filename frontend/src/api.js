@@ -18,6 +18,12 @@ const actions = {
     getUser: async () => {
         return await axios.get(`${serverUrl}/get-user`, createHeaders())
     },
+    postFeed: async ({ description, user, currentList }) => {
+        return await axios.post(`${serverUrl}/feed`, { description, user, currentList }, createHeaders())
+    },
+    postBucketList: async ({ button, item, user }) => {
+        return await axios.post(`${serverUrl}/bucketList`, { button, item, user }, createHeaders())
+    },
     // getMessages: async () => {
     //     let messages = await axios.get(`${serverUrl}/get-messages`)
     //     return messages.data
