@@ -16,15 +16,11 @@
 }
 
 .feedContainer {
-    /* border: 2px solid black; */
     width: 100vw;
     height: 70vh;
-    /* margin-left: 10vw; */
-    /* background: white; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    border-radius: 1%;
 }
 
 .myFeedHeader{
@@ -48,7 +44,6 @@
 .feedSection{
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     align-items: flex-start;
     box-shadow: 2px 2px 2px 2px grey;
     width: 34vw;
@@ -56,13 +51,18 @@
     background-color: white;
     margin: 3%;
     overflow: hidden;
-    overflow-y: scroll;
     border-radius: 15px;
     
     
 }
 .feedWords{
     margin-left: 15px;
+    overflow-y: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+.feedWords::-webkit-scrollbar { 
+    display: none;  
 }
 .feedTitle{
     font-size: 2rem;
@@ -71,11 +71,11 @@
 }
 .feedDescription{
 font-size: 1.4rem;
-
 }
 .feedImage img{
-    
-   border-radius: 15px;
-    height: 100%;
+    border-radius: 15px 15px 0 0;
     width: 100%;
+}
+.hrtag {
+   width: 10vw; 
 }

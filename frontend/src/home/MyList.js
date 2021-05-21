@@ -205,9 +205,6 @@ function MyList(props) {
 
 
 
-
-
-
     return (
         <div className="bucketListPage">
             <div className="bucketListHeader">
