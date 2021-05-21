@@ -6,13 +6,13 @@
     background-repeat: no-repeat;
 }
 
-#title {
-    color: white;
+#title{
+    color: #5688ff;
     position: absolute;
     left: 1%;
     top: 1%;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: bold;
 }
 
 .box{
@@ -84,12 +84,15 @@ form{
 
 
 #title {
-    color: white;
+    color: #5688ff;
     position: absolute;
     left: 1%;
     top: 1%;
     font-size: 2rem;
     font-weight: 700;
+}
+.loginHeader{
+    color: #5688ff
 }
 
 .box{
