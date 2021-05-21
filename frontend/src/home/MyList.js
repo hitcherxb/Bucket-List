@@ -181,7 +181,7 @@ function MyList(props) {
                                 </input>
                             </div>
 
-                            <button className="modalButton" type='submit'>Add to Feed</button>
+                            <button alert='Submited' className="modalButton" type='submit'>Add to Feed</button>
 
                         </form>
                     </div>
