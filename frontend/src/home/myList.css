@@ -8,15 +8,14 @@
 }
 
 .bucketListHeader{
-        color: #5688ff;
-        font-weight: bolder;
-        /* font-size: 3rem; */
-        margin-left: 1%;
-        display: flex;
-        justify-content: space-between;
-        margin-right: 1.5%;
-    
-    }
+    color: #5688ff;
+    font-weight: bolder;
+    margin-left: 1%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1.5%;    
+}
+
 .bucketListHeader h2{
     color: #5688ff;
     font-size: 1.6em;
@@ -88,6 +87,7 @@
     border: 3px solid #5688ff;
     border-radius: 5px;
     width: 15vw;
+    margin-top: 0;
  }
 
  .bucketPic img{
@@ -143,7 +143,7 @@
 
 .bucketContainer{
     overflow-y: scroll;
-    max-height: 45vh;
+    max-height: 55vh;
     margin-top: 1vh;
 }
 

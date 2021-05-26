@@ -18,7 +18,6 @@
     
     .feedContainer {
         width: 100vw;
-        height: 200vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -48,8 +47,8 @@
         flex-direction: column;
         align-items: flex-start;
         box-shadow: 2px 2px 2px 2px grey;
-        width: 75vw;
-        height:60vh;
+        width: 85vw;
+        height:45vh;
         background-color: white;
         margin: 3%;
         overflow: hidden;
@@ -74,7 +73,7 @@
         width: 100%;
     }
     .hrtag {
-       width: 15vw; 
+       width: 17vw; 
     }
 }
 

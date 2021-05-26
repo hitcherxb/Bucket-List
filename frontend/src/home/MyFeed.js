@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import "./MyFeed.css";
 import actions from "../api";
-import TheContext from '../TheContext'
 import Adventure from '../pictures/AdventureFeed.jpeg'
 import Entertainment from '../pictures/EntertainmentFeed.jpeg'
 import Travel from '../pictures/TravelFeed.jpeg'
