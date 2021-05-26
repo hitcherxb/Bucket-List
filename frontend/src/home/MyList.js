@@ -100,7 +100,7 @@ function MyList(props) {
                         {thing.item}
                     </div>
                     <div className="bucketCheckBox">
-                        < div key={thing._id} className="mb-3" >
+                        <div key={thing._id} className="mb-3" >
                             <Form.Check
                                 type='checkbox'
                                 onClick={() => {

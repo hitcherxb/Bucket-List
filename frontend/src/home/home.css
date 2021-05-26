@@ -1,9 +1,8 @@
- 
-  h2{
-    color: white;
-    margin: 0;
-  }
-  
+h2{
+  color: white;
+  margin: 0;
+}
+
   /* HomePage Background */
   .homePage{
   background-image: url("../pictures/homebg.png");
@@ -15,7 +14,7 @@
   /* Log in Button */
   .loginButton{
   background-color: #5688ff;
-  height: 5.5vw;
+  height: 5.5vh;
   width: 150px;
   border-radius: 15px;
   font: bold;
