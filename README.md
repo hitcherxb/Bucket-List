@@ -1,24 +1,15 @@
-<h1>Steps</h1>
+<h1>Bucket List ✈️ 🍔  🎒 🏖 </h1>
 
 
--  Deploy DB to Atlas
+Bucket list is a website that allows you to create a 'bucketlist' item and post it to your profile.
 
--  Add `MONGODB_URI` in `.env` file
+-  Login/Sign up
 
-- Heroku create new app either on dashboard or via CLI
+- Type what you want to do in the future and put the category associated with it.
 
-- Add `.env` variables in  *settings >>> config vars* 
+- Press add and watch the list item add to your list below.
 
-- Netlify import repository 
+- Once completed, Select the checkbox and blog about your experience.
 
-- In Netlify's build command fill out this:  ```cd frontend && npm i && npm run build```
+- After the bucketlist item is complete this will show on your feed!
 
-- In Netlify's publish directory fill out this ```frontend/build``` 
-
-- Add frontend `.env` variables set `CI` to `false`
-
-- Add `REACT_APP_SERVER_URL` to `https://yourHerokuAppName.herokuapp.com/api`
-
-- Change Netlify's domain.  
-
-- Add `clientURL` to config vars in Heroku # Bucket-List
