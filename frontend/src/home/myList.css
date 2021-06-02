@@ -163,7 +163,6 @@
     font: bolder;
 }
 .modal form{
-    
     height: 40vh;
     width: 60vw;
     display: flex;
@@ -181,6 +180,15 @@
 
 #contained-modal-title-vcenter{
     color:#5688ff
+}
+
+.modalText textarea {
+    width:70vw;
+    height: 25vh;
+}
+
+.modal-title {
+    color: #5688ff;
 }
 
 
@@ -375,6 +383,10 @@
     width: 40vw;
     border-radius: 5px;
     border: 1px solid #C4C4C4;
+}
+.modalText textarea {
+    width:40vw;
+    height: 30vh;
 }
 
 }
