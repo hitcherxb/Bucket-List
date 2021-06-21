@@ -174,8 +174,13 @@
     background-color:whitesmoke;
     font: #5688ff;
 }
-.modalButton{
+.modalButton {
     background-color: #5688ff;
+    height: 4vh;
+    width: 35vw;
+    border-radius: 5px;
+    border: none;
+    color: white;
 }
 
 #contained-modal-title-vcenter{
@@ -223,9 +228,6 @@
     font-size: 1.7rem;
     margin-top: 5%;
     color:#5688ff
-}
-.bucketListHeader h1{
-    font-size: 3.2rem;
 }
 
 

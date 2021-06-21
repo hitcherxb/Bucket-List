@@ -61,6 +61,7 @@ router.post(`/signUp`, async (req, res) => {
   });
 });
 
+
 router.post(`/bucketList`, async (req, res) => {
   const user = await User.findOneAndUpdate(
     { _id: req.body.user },
@@ -95,7 +96,7 @@ router.post(`/feed`, async (req, res) => {
 router.get("/getUser", (req, res) => User.find().then((response) => res.json(response)))
 
 function authorize(req, res, next) {
-  // console.log('monkey in the mittle', req.headers);
+  
   if (req.headers.authorization) {
     let token = req.headers.authorization.split(' ')[1];
     // console.log(token);
