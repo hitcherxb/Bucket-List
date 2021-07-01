@@ -13,4 +13,4 @@ Bucket list is a website that allows you to create a 'bucketlist' item and post 
 
 - After the bucketlist item is complete this will show on your feed!
 
-Live Link - https://github.com/hitcherxb/Bucket-List
+Live Link - https://bucket-list-app.netlify.app/
